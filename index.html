@@ -19,18 +19,19 @@
 
     <!-- MODAL LOGIN -->
     <div id="loginModal" class="fixed inset-0 z-50 overflow-y-auto bg-black/60 backdrop-blur-sm" style="background-image: linear-gradient(to bottom, rgba(11,15,23,0.82), rgba(11,15,23,0.94)), url('bg.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-        <div class="relative z-10 max-w-5xl w-full mx-auto px-4"><div class="min-h-screen flex flex-col justify-center py-10"><div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center w-full">
+        <div class="absolute top-4 right-4 z-20"><select onchange="setLang(this.value)" class="lang-select bg-[#131b2e]/90 border border-purple-500/40 text-gray-200 text-xs rounded-xl px-3 py-2 focus:outline-none focus:border-purple-500"><option value="id">🇮🇩 Indonesia</option><option value="en">🇬🇧 English</option><option value="ms">🇲🇾 Melayu</option><option value="es">🇪🇸 Español</option><option value="zh">🇨🇳 中文</option></select></div>
+    <div class="relative z-10 max-w-5xl w-full mx-auto px-4"><div class="min-h-screen flex flex-col justify-center py-10"><div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center w-full">
             <div class="hidden lg:flex flex-col justify-center space-y-5 rounded-3xl border border-purple-500/30 shadow-2xl bg-[#131b2e]/50 backdrop-blur-md p-8">
                 <div class="space-y-3">
                     <span class="inline-block text-[11px] font-semibold tracking-widest text-purple-300 border border-purple-500/40 bg-purple-600/10 px-3 py-1 rounded-full">RONA VISION • CLOUD AI STUDIO</span>
-                    <h1 class="text-4xl font-bold text-white leading-tight">Satu visi,<br>banyak adegan.</h1>
-                    <p class="text-sm text-gray-300 leading-relaxed">Studio video AI untuk kreator Indonesia. Tulis prompt, pilih model, dan hasilkan video siap upload untuk Reels dan YouTube.</p>
+                    <h1 class="text-4xl font-bold text-white leading-tight" data-i18n="heroTitle">Satu visi,<br>banyak adegan.</h1>
+                    <p class="text-sm text-gray-300 leading-relaxed" data-i18n="heroSub">Studio video AI untuk kreator Indonesia. Tulis prompt, pilih model, dan hasilkan video siap upload untuk Reels dan YouTube.</p>
                 </div>
                 <ul class="space-y-2 text-sm text-gray-200">
-                    <li class="flex items-center gap-2"><span class="text-purple-400"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span> Seedance 2.5, Seedance 2.0 &amp; Veo 3.1 Pro</li>
-                    <li class="flex items-center gap-2"><span class="text-purple-400"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span> Video hingga 1080p, format 16:9, 9:16 &amp; 1:1</li>
-                    <li class="flex items-center gap-2"><span class="text-purple-400"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span> Template siap pakai &amp; preset favorit</li>
-                    <li class="flex items-center gap-2"><span class="text-purple-400"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span> Mulai dari 20 kredit, tanpa langganan</li>
+                    <li class="flex items-center gap-2"><span class="text-purple-400"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span> <span data-i18n="feat1">Seedance 2.5, Seedance 2.0 &amp; Veo 3.1 Pro</span></li>
+                    <li class="flex items-center gap-2"><span class="text-purple-400"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span> <span data-i18n="feat2">Video hingga 1080p, format 16:9, 9:16 &amp; 1:1</span></li>
+                    <li class="flex items-center gap-2"><span class="text-purple-400"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span> <span data-i18n="feat3">Template siap pakai &amp; preset favorit</span></li>
+                    <li class="flex items-center gap-2"><span class="text-purple-400"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span> <span data-i18n="feat4">Mulai dari 20 kredit, tanpa langganan</span></li>
                 </ul>
                 <div class="grid grid-cols-3 gap-3">
                     <img src="thumbs/alam.jpg" alt="Contoh karya alam" class="w-full h-20 object-cover rounded-xl border border-purple-500/30">
@@ -44,64 +45,64 @@
                     <span class="inline-flex items-center gap-1.5 text-[11px] text-gray-200 border border-gray-700 bg-[#0b0f17]/60 pl-1 pr-2.5 py-1 rounded-full"><img src="avatars/warna.jpg" alt="Avatar Warna" class="w-5 h-5 rounded-full object-cover">Warna</span>
                     <span class="inline-flex items-center gap-1.5 text-[11px] text-gray-200 border border-gray-700 bg-[#0b0f17]/60 pl-1 pr-2.5 py-1 rounded-full"><img src="avatars/layar.jpg" alt="Avatar Layar" class="w-5 h-5 rounded-full object-cover">Layar</span>
                     <span class="inline-flex items-center gap-1.5 text-[11px] text-gray-200 border border-gray-700 bg-[#0b0f17]/60 pl-1 pr-2.5 py-1 rounded-full"><img src="avatars/kas.jpg" alt="Avatar Kas" class="w-5 h-5 rounded-full object-cover">Kas</span>
-                    <span class="text-[11px] text-purple-300 px-1 py-1">— tim Agen Rona siap membantu</span>
+                    <span class="text-[11px] text-purple-300 px-1 py-1" data-i18n="agentsNote">— tim Agen Rona siap membantu</span>
                 </div>
             </div>
             <div class="bg-[#131b2e]/50 border border-purple-500/30 p-8 rounded-3xl w-full max-w-md mx-auto shadow-2xl backdrop-blur-md">
                 <div id="formLoginView">
                     <div class="text-center mb-6">
-                        <h2 class="text-2xl font-bold text-white">Selamat Datang</h2>
-                        <p class="text-xs text-gray-300 mt-1">Silakan masuk untuk mulai membuat karya</p>
+                        <h2 class="text-2xl font-bold text-white" data-i18n="welcome">Selamat Datang</h2>
+                        <p class="text-xs text-gray-300 mt-1" data-i18n="welcomeSub">Silakan masuk untuk mulai membuat karya</p>
                     </div>
                     <form onsubmit="handleLogin(event)" class="space-y-4">
                         <div>
-                            <label class="block text-xs uppercase tracking-wider text-gray-300 mb-1">Email / Username</label>
+                            <label class="block text-xs uppercase tracking-wider text-gray-300 mb-1" data-i18n="emailLabel">Email / Username</label>
                             <input type="text" id="loginUser" required value="admin@noxusvision.com" class="w-full bg-[#0b0f17]/70 border border-gray-700/60 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-purple-500 text-gray-200">
                         </div>
                         <div>
-                            <label class="block text-xs uppercase tracking-wider text-gray-300 mb-1">Password</label>
+                            <label class="block text-xs uppercase tracking-wider text-gray-300 mb-1" data-i18n="passLabel">Password</label>
                             <div class="relative">
                                 <input type="password" id="loginPass" required value="" placeholder="Password" autocomplete="current-password" class="w-full bg-[#0b0f17]/70 border border-gray-700/60 rounded-xl px-4 py-3 pr-10 text-sm focus:outline-none focus:border-purple-500 text-gray-200">
                                 <button type="button" id="passwordToggleBtn" onclick="togglePasswordVisibility()" aria-label="Tampilkan password" title="Tampilkan password" class="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-white transition"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></button>
                             </div>
                         </div>
                         <button type="submit" class="w-full bg-gradient-to-r from-purple-600 via-indigo-600 to-pink-600 hover:opacity-95 text-white font-bold py-3 rounded-xl transition shadow-lg shadow-purple-600/30">
-                            Masuk ke Studio
+                            <span data-i18n="enterStudio">Masuk ke Studio</span>
                         </button>
                     </form>
                     <div class="flex justify-between items-center mt-5 pt-4 border-t border-gray-700/50 text-xs text-gray-300">
-                        <button type="button" onclick="switchAuthView('reset')" class="hover:text-purple-400 transition">Lupa Password?</button>
-                        <span>Belum punya akun? <button type="button" onclick="switchAuthView('signup')" class="text-purple-400 font-semibold hover:underline">Sign Up</button></span>
+                        <button type="button" onclick="switchAuthView('reset')" class="hover:text-purple-400 transition" data-i18n="forgotPass">Lupa Password?</button>
+                        <span><span data-i18n="noAccount">Belum punya akun?</span> <button type="button" onclick="switchAuthView('signup')" class="text-purple-400 font-semibold hover:underline" data-i18n="signUp">Sign Up</button></span>
                     </div>
                 </div>
 
                 <div id="formSignupView" class="hidden">
                     <div class="text-center mb-6">
-                        <h2 class="text-2xl font-bold text-white">Daftar Akun</h2>
-                        <p class="text-xs text-gray-300 mt-1">Buat akun Rona Vision baru</p>
+                        <h2 class="text-2xl font-bold text-white" data-i18n="createAccount">Daftar Akun</h2>
+                        <p class="text-xs text-gray-300 mt-1" data-i18n="createAccountSub">Buat akun Rona Vision baru</p>
                     </div>
                     <form onsubmit="handleSignup(event)" class="space-y-4">
                         <div>
-                            <label class="block text-xs uppercase tracking-wider text-gray-300 mb-1">Email / Username</label>
+                            <label class="block text-xs uppercase tracking-wider text-gray-300 mb-1" data-i18n="emailLabel">Email / Username</label>
                             <input type="text" id="signupEmail" required class="w-full bg-[#0b0f17]/70 border border-gray-700/60 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-purple-500 text-gray-200" placeholder="user@noxusvision.com">
                         </div>
                         <div>
-                            <label class="block text-xs uppercase tracking-wider text-gray-300 mb-1">Password</label>
+                            <label class="block text-xs uppercase tracking-wider text-gray-300 mb-1" data-i18n="passLabel">Password</label>
                             <input type="password" id="signupPass" required class="w-full bg-[#0b0f17]/70 border border-gray-700/60 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-purple-500 text-gray-200" placeholder="••••••••">
                         </div>
                         <button type="submit" class="w-full bg-gradient-to-r from-purple-600 via-indigo-600 to-pink-600 text-white font-bold py-3 rounded-xl transition">
-                            Daftar Sekarang
+                            <span data-i18n="registerNow">Daftar Sekarang</span>
                         </button>
                     </form>
                     <div class="text-center mt-5 pt-4 border-t border-gray-700/50 text-xs text-gray-300">
-                        Sudah punya akun? <button type="button" onclick="switchAuthView('login')" class="text-purple-400 font-semibold hover:underline">Kembali ke Login</button>
+                        <span data-i18n="haveAccount">Sudah punya akun?</span> <button type="button" onclick="switchAuthView('login')" class="text-purple-400 font-semibold hover:underline" data-i18n="backToLogin">Kembali ke Login</button>
                     </div>
                 </div>
 
                 <div id="formResetView" class="hidden">
                     <div class="text-center mb-6">
-                        <h2 class="text-2xl font-bold text-white">Reset Password</h2>
-                        <p class="text-xs text-gray-300 mt-1">Masukkan email akun Anda</p>
+                        <h2 class="text-2xl font-bold text-white" data-i18n="resetPass">Reset Password</h2>
+                        <p class="text-xs text-gray-300 mt-1" data-i18n="resetPassSub">Masukkan email akun Anda</p>
                     </div>
                     <form onsubmit="handleReset(event)" class="space-y-4">
                         <div>
@@ -109,62 +110,62 @@
                             <input type="email" required class="w-full bg-[#0b0f17]/70 border border-gray-700/60 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-purple-500 text-gray-200" placeholder="user@noxusvision.com">
                         </div>
                         <button type="submit" class="w-full bg-gradient-to-r from-purple-600 via-indigo-600 to-pink-600 text-white font-bold py-3 rounded-xl transition">
-                            Kirim Link Reset
+                            <span data-i18n="sendReset">Kirim Link Reset</span>
                         </button>
                     </form>
                     <div class="text-center mt-5 pt-4 border-t border-gray-700/50 text-xs text-gray-300">
-                        <button type="button" onclick="switchAuthView('login')" class="text-purple-400 font-semibold hover:underline">Kembali ke Login</button>
+                        <button type="button" onclick="switchAuthView('login')" class="text-purple-400 font-semibold hover:underline" data-i18n="backToLogin">Kembali ke Login</button>
                     </div>
                 </div>
             </div>
 
             </div>
-            <p class="text-center text-[11px] text-gray-400 mt-8">Gulir ke bawah untuk melihat model, agen, contoh karya, dan harga ↓</p>
+            <p class="text-center text-[11px] text-gray-400 mt-8" data-i18n="scrollHint">Gulir ke bawah untuk melihat model, agen, contoh karya, dan harga ↓</p>
         </div>
 
         <div class="space-y-12 pb-10">
             <section class="space-y-4">
-                <h2 class="text-2xl font-bold text-white">Model Video AI</h2>
+                <h2 class="text-2xl font-bold text-white" data-i18n="secModels">Model Video AI</h2>
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                     <div class="bg-[#131b2e]/60 backdrop-blur border border-gray-800 rounded-2xl p-5 space-y-2">
                         <h3 class="font-bold text-white text-sm">Seedance 2.5</h3>
-                        <p class="text-xs text-gray-400">1080p dengan audio &amp; lip-sync. Cocok untuk drama dan video bicara.</p>
-                        <p class="text-xs text-purple-300">Contoh 10 detik 720p: 24 kredit</p>
+                        <p class="text-xs text-gray-400" data-i18n="model25">1080p dengan audio &amp; lip-sync. Cocok untuk drama dan video bicara.</p>
+                        <p class="text-xs text-purple-300" data-i18n="cost24">Contoh 10 detik 720p: 24 kredit</p>
                     </div>
                     <div class="bg-[#131b2e]/60 backdrop-blur border border-gray-800 rounded-2xl p-5 space-y-2">
                         <h3 class="font-bold text-white text-sm">Seedance 2.0</h3>
-                        <p class="text-xs text-gray-400">Kualitas studio standar, lebih hemat. Cocok untuk ASMR dan suasana.</p>
-                        <p class="text-xs text-purple-300">Contoh 10 detik 720p: 16 kredit</p>
+                        <p class="text-xs text-gray-400" data-i18n="model20">Kualitas studio standar, lebih hemat. Cocok untuk ASMR dan suasana.</p>
+                        <p class="text-xs text-purple-300" data-i18n="cost16">Contoh 10 detik 720p: 16 kredit</p>
                     </div>
                     <div class="bg-[#131b2e]/60 backdrop-blur border border-gray-800 rounded-2xl p-5 space-y-2">
                         <h3 class="font-bold text-white text-sm">Veo 3.1 Pro</h3>
-                        <p class="text-xs text-gray-400">Sinematik ultra realistis. Cocok untuk adegan film dan iklan.</p>
-                        <p class="text-xs text-purple-300">Contoh 10 detik 720p: 20 kredit</p>
+                        <p class="text-xs text-gray-400" data-i18n="modelVeo">Sinematik ultra realistis. Cocok untuk adegan film dan iklan.</p>
+                        <p class="text-xs text-purple-300" data-i18n="cost20">Contoh 10 detik 720p: 20 kredit</p>
                     </div>
                 </div>
             </section>
 
             <section class="space-y-4">
-                <h2 class="text-2xl font-bold text-white">Tim Agen Rona</h2>
-                <p class="text-xs text-gray-400">Enam agen dengan tugas masing-masing, dari ide sampai laporan. Kamu cukup memberi perintah sekali.</p>
+                <h2 class="text-2xl font-bold text-white" data-i18n="secAgents">Tim Agen Rona</h2>
+                <p class="text-xs text-gray-400" data-i18n="agentsSub">Enam agen dengan tugas masing-masing, dari ide sampai laporan. Kamu cukup memberi perintah sekali.</p>
                 <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
                     <div class="bg-[#131b2e]/60 backdrop-blur border border-gray-800 rounded-2xl p-4 space-y-1"><img src="avatars/arah.jpg" alt="Avatar Arah" class="agent-avatar w-11 h-11 rounded-full object-cover border border-purple-500/50" style="animation-delay:0s">
-                    <p class="text-sm font-semibold text-white">01 • Arah</p><p class="text-[11px] text-gray-400">Koordinator, membagi tugas ke agen lain.</p></div>
+                    <p class="text-sm font-semibold text-white">01 • Arah</p><p class="text-[11px] text-gray-400" data-i18n="agArah">Koordinator, membagi tugas ke agen lain.</p></div>
                     <div class="bg-[#131b2e]/60 backdrop-blur border border-gray-800 rounded-2xl p-4 space-y-1"><img src="avatars/pijar.jpg" alt="Avatar Pijar" class="agent-avatar w-11 h-11 rounded-full object-cover border border-purple-500/50" style="animation-delay:0.4s">
-                    <p class="text-sm font-semibold text-white">02 • Pijar</p><p class="text-[11px] text-gray-400">Ide &amp; tren, riset kompetitor.</p></div>
+                    <p class="text-sm font-semibold text-white">02 • Pijar</p><p class="text-[11px] text-gray-400" data-i18n="agPijar">Ide &amp; tren, riset kompetitor.</p></div>
                     <div class="bg-[#131b2e]/60 backdrop-blur border border-gray-800 rounded-2xl p-4 space-y-1"><img src="avatars/lensa.jpg" alt="Avatar Lensa" class="agent-avatar w-11 h-11 rounded-full object-cover border border-purple-500/50" style="animation-delay:0.8s">
-                    <p class="text-sm font-semibold text-white">03 • Lensa</p><p class="text-[11px] text-gray-400">Prompt &amp; generate, pilih model terbaik.</p></div>
+                    <p class="text-sm font-semibold text-white">03 • Lensa</p><p class="text-[11px] text-gray-400" data-i18n="agLensa">Prompt &amp; generate, pilih model terbaik.</p></div>
                     <div class="bg-[#131b2e]/60 backdrop-blur border border-gray-800 rounded-2xl p-4 space-y-1"><img src="avatars/warna.jpg" alt="Avatar Warna" class="agent-avatar w-11 h-11 rounded-full object-cover border border-purple-500/50" style="animation-delay:1.2s">
-                    <p class="text-sm font-semibold text-white">04 • Warna</p><p class="text-[11px] text-gray-400">Editor hasil, judul &amp; thumbnail.</p></div>
+                    <p class="text-sm font-semibold text-white">04 • Warna</p><p class="text-[11px] text-gray-400" data-i18n="agWarna">Editor hasil, judul &amp; thumbnail.</p></div>
                     <div class="bg-[#131b2e]/60 backdrop-blur border border-gray-800 rounded-2xl p-4 space-y-1"><img src="avatars/layar.jpg" alt="Avatar Layar" class="agent-avatar w-11 h-11 rounded-full object-cover border border-purple-500/50" style="animation-delay:1.6s">
-                    <p class="text-sm font-semibold text-white">05 • Layar</p><p class="text-[11px] text-gray-400">Penerbit ke Facebook &amp; YouTube.</p></div>
+                    <p class="text-sm font-semibold text-white">05 • Layar</p><p class="text-[11px] text-gray-400" data-i18n="agLayar">Penerbit ke Facebook &amp; YouTube.</p></div>
                     <div class="bg-[#131b2e]/60 backdrop-blur border border-gray-800 rounded-2xl p-4 space-y-1"><img src="avatars/kas.jpg" alt="Avatar Kas" class="agent-avatar w-11 h-11 rounded-full object-cover border border-purple-500/50" style="animation-delay:2s">
-                    <p class="text-sm font-semibold text-white">06 • Kas</p><p class="text-[11px] text-gray-400">Bendahara, kredit &amp; laporan.</p></div>
+                    <p class="text-sm font-semibold text-white">06 • Kas</p><p class="text-[11px] text-gray-400" data-i18n="agKas">Bendahara, kredit &amp; laporan.</p></div>
                 </div>
             </section>
 
             <section class="space-y-4">
-                <h2 class="text-2xl font-bold text-white">Contoh Karya Komunitas</h2>
+                <h2 class="text-2xl font-bold text-white" data-i18n="secWorks">Contoh Karya Komunitas</h2>
                 <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
                     <img src="thumbs/alam.jpg" alt="Suasana Alam Tenang" class="w-full h-36 object-cover rounded-2xl border border-purple-500/30">
                     <img src="thumbs/kota.jpg" alt="Adegan Kota Malam" class="w-full h-36 object-cover rounded-2xl border border-purple-500/30">
@@ -176,35 +177,35 @@
             </section>
 
             <section class="space-y-4">
-                <h2 class="text-2xl font-bold text-white">Harga &amp; Paket Kredit</h2>
+                <h2 class="text-2xl font-bold text-white" data-i18n="secPricing">Harga &amp; Paket Kredit</h2>
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                     <div class="bg-[#131b2e]/60 backdrop-blur border border-gray-800 rounded-2xl p-5 space-y-2">
                         <h3 class="font-bold text-white text-sm">Starter</h3>
                         <p class="text-2xl font-bold text-purple-400">20 Kredit</p>
                         <p class="text-sm text-gray-200 font-semibold">Rp 50.000</p>
-                        <p class="text-xs text-gray-400">Untuk coba-coba dan video pendek.</p>
+                        <p class="text-xs text-gray-400" data-i18n="packStarter">Untuk coba-coba dan video pendek.</p>
                     </div>
                     <div class="bg-[#131b2e]/60 backdrop-blur border-2 border-purple-500 rounded-2xl p-5 space-y-2">
                         <h3 class="font-bold text-white text-sm">Creator</h3>
                         <p class="text-2xl font-bold text-purple-400">50 Kredit</p>
                         <p class="text-sm text-gray-200 font-semibold">Rp 120.000</p>
-                        <p class="text-xs text-gray-400">Untuk kreator yang rutin upload.</p>
+                        <p class="text-xs text-gray-400" data-i18n="packCreator">Untuk kreator yang rutin upload.</p>
                     </div>
                     <div class="bg-[#131b2e]/60 backdrop-blur border border-gray-800 rounded-2xl p-5 space-y-2">
                         <h3 class="font-bold text-white text-sm">Studio</h3>
                         <p class="text-2xl font-bold text-purple-400">150 Kredit</p>
                         <p class="text-sm text-gray-200 font-semibold">Rp 350.000</p>
-                        <p class="text-xs text-gray-400">Untuk produksi banyak dan jasa video.</p>
+                        <p class="text-xs text-gray-400" data-i18n="packStudio">Untuk produksi banyak dan jasa video.</p>
                     </div>
                 </div>
-                <p class="text-[11px] text-gray-500">Tanpa langganan. Pembayaran QRIS dan e-wallet dihubungkan di tahap backend.</p>
+                <p class="text-[11px] text-gray-500" data-i18n="pricingNote">Tanpa langganan. Pembayaran QRIS dan e-wallet dihubungkan di tahap backend.</p>
             </section>
 
             <footer class="text-center text-[11px] text-gray-400 pt-4 border-t border-gray-800 space-x-3">
                 <span>© 2026 Rona Vision</span>
-                <button type="button" onclick="openInfoModal('terms')" class="hover:text-purple-400 transition">Syarat Penggunaan</button>
-                <button type="button" onclick="openInfoModal('privacy')" class="hover:text-purple-400 transition">Kebijakan Privasi</button>
-                <button type="button" onclick="openInfoModal('contact')" class="hover:text-purple-400 transition">Kontak</button>
+                <button type="button" onclick="openInfoModal('terms')" class="hover:text-purple-400 transition" data-i18n="terms">Syarat Penggunaan</button>
+                <button type="button" onclick="openInfoModal('privacy')" class="hover:text-purple-400 transition" data-i18n="privacy">Kebijakan Privasi</button>
+                <button type="button" onclick="openInfoModal('contact')" class="hover:text-purple-400 transition" data-i18n="contact">Kontak</button>
             </footer>
         </div>
     </div>
@@ -248,16 +249,18 @@
             </div>
         </div>
         <nav class="flex space-x-1 bg-[#131b2e]/90 backdrop-blur p-1 rounded-xl border border-gray-800">
-            <button onclick="switchTabNav('home')" id="navHome" class="px-5 py-1.5 rounded-lg text-sm font-medium text-gray-400 hover:text-white transition">Beranda</button>
+            <button onclick="switchTabNav('home')" id="navHome" class="px-5 py-1.5 rounded-lg text-sm font-medium text-gray-400 hover:text-white transition" data-i18n="navHome">Beranda</button>
             <button onclick="switchTabNav('studio')" id="navStudio" class="px-5 py-1.5 rounded-lg text-sm font-medium bg-purple-600 text-white transition">Studio</button>
             <button onclick="switchTabNav('gallery')" id="navGallery" class="px-5 py-1.5 rounded-lg text-sm font-medium text-gray-400 hover:text-white transition">Gallery</button>
             <button onclick="switchTabNav('template')" id="navTemplate" class="px-5 py-1.5 rounded-lg text-sm font-medium text-gray-400 hover:text-white transition">Template</button>
-            <button onclick="switchTabNav('agent')" id="navAgent" class="px-5 py-1.5 rounded-lg text-sm font-medium text-gray-400 hover:text-white transition">Agen</button>
-            <button onclick="switchTabNav('pricing')" id="navPricing" class="px-5 py-1.5 rounded-lg text-sm font-medium text-gray-400 hover:text-white transition">Harga</button>
+            <button onclick="switchTabNav('agent')" id="navAgent" class="px-5 py-1.5 rounded-lg text-sm font-medium text-gray-400 hover:text-white transition" data-i18n="navAgents">Agen</button>
+            <button onclick="switchTabNav('pricing')" id="navPricing" class="px-5 py-1.5 rounded-lg text-sm font-medium text-gray-400 hover:text-white transition" data-i18n="navPricing">Harga</button>
             <button onclick="switchTabNav('apikey')" id="navApikey" class="px-5 py-1.5 rounded-lg text-sm font-medium text-gray-400 hover:text-white transition hidden">API Key</button>
             <button onclick="switchTabNav('admin')" id="navAdmin" class="px-5 py-1.5 rounded-lg text-sm font-medium text-gray-400 hover:text-white transition hidden">Admin Panel</button>
         </nav>
         
+        <select onchange="setLang(this.value)" class="lang-select bg-[#131b2e]/90 border border-purple-500/40 text-gray-200 text-xs rounded-xl px-3 py-2 focus:outline-none focus:border-purple-500"><option value="id">🇮🇩 Indonesia</option><option value="en">🇬🇧 English</option><option value="ms">🇲🇾 Melayu</option><option value="es">🇪🇸 Español</option><option value="zh">🇨🇳 中文</option></select>
+
         <!-- AKUN DROPDOWN -->
         <div class="relative">
             <button onclick="toggleAccountMenu()" class="flex items-center space-x-2 bg-purple-950/50 border border-purple-500/30 px-3 py-1.5 rounded-xl hover:bg-purple-900/40 transition">
@@ -270,7 +273,7 @@
                 <button onclick="openAccountModal('credits')" class="w-full text-left px-4 py-2 hover:bg-purple-600/20 text-gray-200 transition">⚡ Sisa Kredit (<span id="menuCreditCount">160</span>)</button>
                 <button onclick="openAccountModal('topup')" class="w-full text-left px-4 py-2 hover:bg-purple-600/20 text-purple-300 font-semibold transition">💳 Top Up Kredit</button>
                 <div class="border-t border-gray-800 my-1"></div>
-                <button onclick="logout()" class="w-full text-left px-4 py-2 hover:bg-red-500/20 text-red-400 transition font-medium">🚪 Keluar</button>
+                <button onclick="logout()" class="w-full text-left px-4 py-2 hover:bg-red-500/20 text-red-400 transition font-medium">🚪 <span data-i18n="logout">Keluar</span></button>
             </div>
         </div>
     </header>
@@ -285,18 +288,18 @@
             <div id="homeSection" class="hidden space-y-6">
                 <div class="bg-[#131b2e]/90 backdrop-blur border border-purple-500/30 rounded-2xl p-6 shadow-xl space-y-3">
                     <p class="text-[11px] text-purple-400 tracking-widest uppercase font-semibold">Rona Vision</p>
-                    <h2 class="text-3xl font-bold text-white">Satu visi, banyak adegan.</h2>
+                    <h2 class="text-3xl font-bold text-white" data-i18n="heroTitlePlain">Satu visi, banyak adegan.</h2>
                     <p class="text-sm text-gray-400 max-w-2xl">Buat video dan gambar AI dari prompt atau foto referensi, pakai template siap pakai, simpan preset favorit, dan atur kredit kamu dari satu tempat.</p>
                     <div class="flex flex-wrap gap-2 pt-1">
-                        <button onclick="switchTabNav('studio')" class="bg-gradient-to-r from-purple-600 via-indigo-600 to-pink-600 text-white px-5 py-2.5 rounded-xl text-sm font-bold transition">Mulai Buat Video</button>
-                        <button onclick="switchTabNav('template')" class="bg-purple-600/20 border border-purple-500/40 text-purple-200 px-5 py-2.5 rounded-xl text-sm font-medium transition">Lihat Template</button>
-                        <button onclick="switchTabNav('pricing')" class="bg-gray-800 text-gray-200 px-5 py-2.5 rounded-xl text-sm font-medium transition">Lihat Harga</button>
+                        <button onclick="switchTabNav('studio')" class="bg-gradient-to-r from-purple-600 via-indigo-600 to-pink-600 text-white px-5 py-2.5 rounded-xl text-sm font-bold transition" data-i18n="startVideo">Mulai Buat Video</button>
+                        <button onclick="switchTabNav('template')" class="bg-purple-600/20 border border-purple-500/40 text-purple-200 px-5 py-2.5 rounded-xl text-sm font-medium transition" data-i18n="seeTemplates">Lihat Template</button>
+                        <button onclick="switchTabNav('pricing')" class="bg-gray-800 text-gray-200 px-5 py-2.5 rounded-xl text-sm font-medium transition" data-i18n="seePricing">Lihat Harga</button>
                     </div>
                 </div>
 
                 <div class="space-y-3">
                     <div class="flex justify-between items-center">
-                        <h3 class="text-lg font-bold text-white">Proyek Terakhir</h3>
+                        <h3 class="text-lg font-bold text-white" data-i18n="recentProjects">Proyek Terakhir</h3>
                         <button onclick="switchTabNav('gallery')" class="text-xs text-purple-400 hover:underline">Lihat Gallery</button>
                     </div>
                     <div id="homeRecentProjects" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -309,7 +312,7 @@
 
                 <div class="space-y-3">
                     <div class="flex justify-between items-center">
-                        <h3 class="text-lg font-bold text-white">Template Pilihan</h3>
+                        <h3 class="text-lg font-bold text-white" data-i18n="featuredTemplates">Template Pilihan</h3>
                         <button onclick="switchTabNav('template')" class="text-xs text-purple-400 hover:underline">Lihat Semua Template</button>
                     </div>
                     <div id="homeTemplatePicks" class="grid grid-cols-1 sm:grid-cols-3 gap-4"></div>
@@ -317,7 +320,7 @@
 
                 <div class="space-y-3">
                     <div class="flex items-center justify-between">
-                        <h3 class="text-lg font-bold text-white">Dari Komunitas</h3>
+                        <h3 class="text-lg font-bold text-white" data-i18n="fromCommunity">Dari Komunitas</h3>
                         <span class="text-[11px] text-gray-500">Contoh tampilan, galeri komunitas asli aktif di tahap backend</span>
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -432,7 +435,7 @@
                 </div>
 
                 <div class="space-y-3">
-                    <h3 class="text-lg font-bold text-white">Belajar & Buat</h3>
+                    <h3 class="text-lg font-bold text-white" data-i18n="learnCreate">Belajar &amp; Buat</h3>
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                         <div class="bg-[#131b2e]/90 backdrop-blur border border-gray-800 rounded-2xl p-4 space-y-2">
                             <p class="text-sm font-semibold text-white">1. Tulis Prompt yang Jelas</p>
@@ -595,7 +598,7 @@
             <!-- AGENT SECTION -->
             <div id="agentSection" class="hidden space-y-6">
                 <div>
-                    <h2 class="text-3xl font-bold text-white tracking-wide">Agen Rona</h2>
+                    <h2 class="text-3xl font-bold text-white tracking-wide" data-i18n="secAgents">Agen Rona</h2>
                     <p class="text-xs text-gray-400 mt-1">Satu tim AI untuk studio videomu. Kamu beri ide, tim agen yang mengerjakan langkah-langkahnya.</p>
                 </div>
 
@@ -1699,6 +1702,25 @@
         updateCreditDisplay();
         renderTemplates();
         renderRecentProjects();
-    </script>
+    
+        // ===== Multi-bahasa (i18n) =====
+        const I18N = {"id": {"heroTitle": "Satu visi,<br>banyak adegan.", "heroTitlePlain": "Satu visi, banyak adegan.", "heroSub": "Studio video AI untuk kreator Indonesia. Tulis prompt, pilih model, dan hasilkan video siap upload untuk Reels dan YouTube.", "feat1": "Seedance 2.5, Seedance 2.0 &amp; Veo 3.1 Pro", "feat2": "Video hingga 1080p, format 16:9, 9:16 &amp; 1:1", "feat3": "Template siap pakai &amp; preset favorit", "feat4": "Mulai dari 20 kredit, tanpa langganan", "agentsNote": "— tim Agen Rona siap membantu", "scrollHint": "Gulir ke bawah untuk melihat model, agen, contoh karya, dan harga ↓", "secModels": "Model Video AI", "model25": "1080p dengan audio &amp; lip-sync. Cocok untuk drama dan video bicara.", "cost24": "Contoh 10 detik 720p: 24 kredit", "model20": "Kualitas studio standar, lebih hemat. Cocok untuk ASMR dan suasana.", "cost16": "Contoh 10 detik 720p: 16 kredit", "modelVeo": "Sinematik ultra realistis. Cocok untuk adegan film dan iklan.", "cost20": "Contoh 10 detik 720p: 20 kredit", "secAgents": "Tim Agen Rona", "agentsSub": "Enam agen dengan tugas masing-masing, dari ide sampai laporan. Kamu cukup memberi perintah sekali.", "agArah": "Koordinator, membagi tugas ke agen lain.", "agPijar": "Ide &amp; tren, riset kompetitor.", "agLensa": "Prompt &amp; generate, pilih model terbaik.", "agWarna": "Editor hasil, judul &amp; thumbnail.", "agLayar": "Penerbit ke Facebook &amp; YouTube.", "agKas": "Bendahara, kredit &amp; laporan.", "secWorks": "Contoh Karya Komunitas", "secPricing": "Harga &amp; Paket Kredit", "packStarter": "Untuk coba-coba dan video pendek.", "packCreator": "Untuk kreator yang rutin upload.", "packStudio": "Untuk produksi banyak dan jasa video.", "pricingNote": "Tanpa langganan. Pembayaran QRIS dan e-wallet dihubungkan di tahap backend.", "terms": "Syarat Penggunaan", "privacy": "Kebijakan Privasi", "contact": "Kontak", "welcome": "Selamat Datang", "welcomeSub": "Silakan masuk untuk mulai membuat karya", "emailLabel": "Email / Username", "passLabel": "Password", "enterStudio": "Masuk ke Studio", "forgotPass": "Lupa Password?", "noAccount": "Belum punya akun?", "signUp": "Sign Up", "createAccount": "Daftar Akun", "createAccountSub": "Buat akun Rona Vision baru", "registerNow": "Daftar Sekarang", "haveAccount": "Sudah punya akun?", "backToLogin": "Kembali ke Login", "resetPass": "Reset Password", "resetPassSub": "Masukkan email akun Anda", "sendReset": "Kirim Link Reset", "navHome": "Beranda", "navAgents": "Agen", "navPricing": "Harga", "logout": "Keluar", "startVideo": "Mulai Buat Video", "seeTemplates": "Lihat Template", "seePricing": "Lihat Harga", "recentProjects": "Proyek Terakhir", "featuredTemplates": "Template Pilihan", "fromCommunity": "Dari Komunitas", "learnCreate": "Belajar &amp; Buat"}, "en": {"heroTitle": "One vision,<br>many scenes.", "heroTitlePlain": "One vision, many scenes.", "heroSub": "An AI video studio for creators everywhere. Write a prompt, pick a model, and produce videos ready to upload to Reels and YouTube.", "feat1": "Seedance 2.5, Seedance 2.0 &amp; Veo 3.1 Pro", "feat2": "Video up to 1080p, in 16:9, 9:16 &amp; 1:1", "feat3": "Ready-to-use templates &amp; favourite presets", "feat4": "Start from 20 credits, no subscription", "agentsNote": "— the Rona Agent team is ready to help", "scrollHint": "Scroll down to see models, agents, sample works, and pricing ↓", "secModels": "AI Video Models", "model25": "1080p with audio &amp; lip-sync. Great for drama and talking videos.", "cost24": "Example 10 seconds 720p: 24 credits", "model20": "Standard studio quality, more affordable. Great for ASMR and ambience.", "cost16": "Example 10 seconds 720p: 16 credits", "modelVeo": "Ultra-realistic cinematic. Great for film scenes and ads.", "cost20": "Example 10 seconds 720p: 20 credits", "secAgents": "Rona Agent Team", "agentsSub": "Six agents, each with its own job, from idea to report. You only give one command.", "agArah": "Coordinator, delegates tasks to the other agents.", "agPijar": "Ideas &amp; trends, competitor research.", "agLensa": "Prompt &amp; generate, picks the best model.", "agWarna": "Result editor, titles &amp; thumbnails.", "agLayar": "Publisher to Facebook &amp; YouTube.", "agKas": "Treasurer, credits &amp; reports.", "secWorks": "Community Sample Works", "secPricing": "Pricing &amp; Credit Packs", "packStarter": "For trying things out and short videos.", "packCreator": "For creators who upload regularly.", "packStudio": "For heavy production and video services.", "pricingNote": "No subscription. QRIS and e-wallet payments connect at the backend stage.", "terms": "Terms of Use", "privacy": "Privacy Policy", "contact": "Contact", "welcome": "Welcome", "welcomeSub": "Sign in to start creating", "emailLabel": "Email / Username", "passLabel": "Password", "enterStudio": "Enter Studio", "forgotPass": "Forgot Password?", "noAccount": "Don't have an account?", "signUp": "Sign Up", "createAccount": "Create Account", "createAccountSub": "Create a new Rona Vision account", "registerNow": "Register Now", "haveAccount": "Already have an account?", "backToLogin": "Back to Login", "resetPass": "Reset Password", "resetPassSub": "Enter your account email", "sendReset": "Send Reset Link", "navHome": "Home", "navAgents": "Agents", "navPricing": "Pricing", "logout": "Log Out", "startVideo": "Start Making Video", "seeTemplates": "View Templates", "seePricing": "View Pricing", "recentProjects": "Recent Projects", "featuredTemplates": "Featured Templates", "fromCommunity": "From the Community", "learnCreate": "Learn &amp; Create"}, "ms": {"heroTitle": "Satu visi,<br>banyak adegan.", "heroTitlePlain": "Satu visi, banyak adegan.", "heroSub": "Studio video AI untuk pencipta di mana-mana. Tulis prompt, pilih model, dan hasilkan video sedia dimuat naik ke Reels dan YouTube.", "feat1": "Seedance 2.5, Seedance 2.0 &amp; Veo 3.1 Pro", "feat2": "Video hingga 1080p, format 16:9, 9:16 &amp; 1:1", "feat3": "Templat sedia guna &amp; pratetap kegemaran", "feat4": "Bermula dari 20 kredit, tanpa langganan", "agentsNote": "— pasukan Agen Rona sedia membantu", "scrollHint": "Tatal ke bawah untuk melihat model, agen, contoh karya, dan harga ↓", "secModels": "Model Video AI", "model25": "1080p dengan audio &amp; lip-sync. Sesuai untuk drama dan video bercakap.", "cost24": "Contoh 10 saat 720p: 24 kredit", "model20": "Kualiti studio standard, lebih jimat. Sesuai untuk ASMR dan suasana.", "cost16": "Contoh 10 saat 720p: 16 kredit", "modelVeo": "Sinematik ultra realistik. Sesuai untuk adegan filem dan iklan.", "cost20": "Contoh 10 saat 720p: 20 kredit", "secAgents": "Pasukan Agen Rona", "agentsSub": "Enam agen dengan tugas masing-masing, dari idea hingga laporan. Anda hanya memberi satu arahan.", "agArah": "Penyelaras, membahagikan tugas kepada agen lain.", "agPijar": "Idea &amp; trend, kajian pesaing.", "agLensa": "Prompt &amp; jana, pilih model terbaik.", "agWarna": "Editor hasil, tajuk &amp; thumbnail.", "agLayar": "Penerbit ke Facebook &amp; YouTube.", "agKas": "Bendahari, kredit &amp; laporan.", "secWorks": "Contoh Karya Komuniti", "secPricing": "Harga &amp; Pakej Kredit", "packStarter": "Untuk mencuba dan video pendek.", "packCreator": "Untuk pencipta yang kerap memuat naik.", "packStudio": "Untuk produksi banyak dan perkhidmatan video.", "pricingNote": "Tanpa langganan. Pembayaran QRIS dan e-dompet disambungkan di peringkat backend.", "terms": "Terma Penggunaan", "privacy": "Dasar Privasi", "contact": "Hubungi", "welcome": "Selamat Datang", "welcomeSub": "Sila log masuk untuk mula berkarya", "emailLabel": "E-mel / Nama Pengguna", "passLabel": "Kata Laluan", "enterStudio": "Masuk ke Studio", "forgotPass": "Lupa Kata Laluan?", "noAccount": "Belum ada akaun?", "signUp": "Daftar", "createAccount": "Daftar Akaun", "createAccountSub": "Buat akaun Rona Vision baharu", "registerNow": "Daftar Sekarang", "haveAccount": "Sudah ada akaun?", "backToLogin": "Kembali ke Log Masuk", "resetPass": "Set Semula Kata Laluan", "resetPassSub": "Masukkan e-mel akaun anda", "sendReset": "Hantar Pautan Set Semula", "navHome": "Laman Utama", "navAgents": "Agen", "navPricing": "Harga", "logout": "Log Keluar", "startVideo": "Mula Buat Video", "seeTemplates": "Lihat Templat", "seePricing": "Lihat Harga", "recentProjects": "Projek Terkini", "featuredTemplates": "Templat Pilihan", "fromCommunity": "Dari Komuniti", "learnCreate": "Belajar &amp; Buat"}, "es": {"heroTitle": "Una visión,<br>muchas escenas.", "heroTitlePlain": "Una visión, muchas escenas.", "heroSub": "Un estudio de video con IA para creadores de todo el mundo. Escribe un prompt, elige un modelo y produce videos listos para subir a Reels y YouTube.", "feat1": "Seedance 2.5, Seedance 2.0 y Veo 3.1 Pro", "feat2": "Video hasta 1080p, en 16:9, 9:16 y 1:1", "feat3": "Plantillas listas y ajustes favoritos", "feat4": "Desde 20 créditos, sin suscripción", "agentsNote": "— el equipo de Agentes Rona está listo para ayudar", "scrollHint": "Desplázate para ver modelos, agentes, ejemplos y precios ↓", "secModels": "Modelos de Video IA", "model25": "1080p con audio y sincronización labial. Ideal para drama y videos hablados.", "cost24": "Ejemplo 10 segundos 720p: 24 créditos", "model20": "Calidad de estudio estándar, más económico. Ideal para ASMR y ambientes.", "cost16": "Ejemplo 10 segundos 720p: 16 créditos", "modelVeo": "Cinematográfico ultrarrealista. Ideal para escenas de cine y anuncios.", "cost20": "Ejemplo 10 segundos 720p: 20 créditos", "secAgents": "Equipo de Agentes Rona", "agentsSub": "Seis agentes, cada uno con su tarea, de la idea al informe. Solo das una orden.", "agArah": "Coordinador, reparte tareas a los demás agentes.", "agPijar": "Ideas y tendencias, estudio de la competencia.", "agLensa": "Prompt y generación, elige el mejor modelo.", "agWarna": "Editor de resultados, títulos y miniaturas.", "agLayar": "Publicador en Facebook y YouTube.", "agKas": "Tesorería, créditos e informes.", "secWorks": "Ejemplos de la Comunidad", "secPricing": "Precios y Paquetes de Créditos", "packStarter": "Para probar y hacer videos cortos.", "packCreator": "Para creadores que suben contenido seguido.", "packStudio": "Para producción intensiva y servicios de video.", "pricingNote": "Sin suscripción. Los pagos QRIS y billeteras electrónicas se conectan en la etapa backend.", "terms": "Términos de Uso", "privacy": "Política de Privacidad", "contact": "Contacto", "welcome": "Bienvenido", "welcomeSub": "Inicia sesión para empezar a crear", "emailLabel": "Correo / Usuario", "passLabel": "Contraseña", "enterStudio": "Entrar al Estudio", "forgotPass": "¿Olvidaste tu contraseña?", "noAccount": "¿No tienes cuenta?", "signUp": "Regístrate", "createAccount": "Crear Cuenta", "createAccountSub": "Crea una nueva cuenta de Rona Vision", "registerNow": "Registrarse Ahora", "haveAccount": "¿Ya tienes cuenta?", "backToLogin": "Volver al Inicio de Sesión", "resetPass": "Restablecer Contraseña", "resetPassSub": "Ingresa el correo de tu cuenta", "sendReset": "Enviar Enlace", "navHome": "Inicio", "navAgents": "Agentes", "navPricing": "Precios", "logout": "Salir", "startVideo": "Crear Video", "seeTemplates": "Ver Plantillas", "seePricing": "Ver Precios", "recentProjects": "Proyectos Recientes", "featuredTemplates": "Plantillas Destacadas", "fromCommunity": "De la Comunidad", "learnCreate": "Aprende y Crea"}, "zh": {"heroTitle": "一个愿景，<br>许多场景。", "heroTitlePlain": "一个愿景，许多场景。", "heroSub": "为全球创作者打造的 AI 视频工作室。输入提示词，选择模型，生成可直接上传到 Reels 和 YouTube 的视频。", "feat1": "Seedance 2.5、Seedance 2.0 与 Veo 3.1 Pro", "feat2": "最高 1080p，支持 16:9、9:16 与 1:1", "feat3": "即用模板与收藏预设", "feat4": "20 积分起，无需订阅", "agentsNote": "— Rona 智能体团队随时为您服务", "scrollHint": "向下滚动查看模型、智能体、示例作品和价格 ↓", "secModels": "AI 视频模型", "model25": "1080p，带音频与唇形同步。适合剧情和口播视频。", "cost24": "示例：10 秒 720p 需 24 积分", "model20": "标准影棚品质，更实惠。适合 ASMR 和氛围视频。", "cost16": "示例：10 秒 720p 需 16 积分", "modelVeo": "超逼真电影质感。适合电影场景和广告。", "cost20": "示例：10 秒 720p 需 20 积分", "secAgents": "Rona 智能体团队", "agentsSub": "六位智能体各司其职，从创意到报告。您只需下达一次指令。", "agArah": "协调员，将任务分配给其他智能体。", "agPijar": "创意与趋势，竞品研究。", "agLensa": "提示词与生成，选择最佳模型。", "agWarna": "成果编辑，标题与封面。", "agLayar": "发布到 Facebook 与 YouTube。", "agKas": "财务，积分与报告。", "secWorks": "社区示例作品", "secPricing": "价格与积分套餐", "packStarter": "适合试用和短视频。", "packCreator": "适合经常发布的创作者。", "packStudio": "适合大量制作和视频服务。", "pricingNote": "无需订阅。QRIS 与电子钱包支付将在后端阶段接入。", "terms": "使用条款", "privacy": "隐私政策", "contact": "联系我们", "welcome": "欢迎", "welcomeSub": "登录后开始创作", "emailLabel": "邮箱 / 用户名", "passLabel": "密码", "enterStudio": "进入工作室", "forgotPass": "忘记密码？", "noAccount": "还没有账户？", "signUp": "注册", "createAccount": "创建账户", "createAccountSub": "创建新的 Rona Vision 账户", "registerNow": "立即注册", "haveAccount": "已有账户？", "backToLogin": "返回登录", "resetPass": "重置密码", "resetPassSub": "输入您的账户邮箱", "sendReset": "发送重置链接", "navHome": "首页", "navAgents": "智能体", "navPricing": "价格", "logout": "退出", "startVideo": "开始制作视频", "seeTemplates": "查看模板", "seePricing": "查看价格", "recentProjects": "最近项目", "featuredTemplates": "精选模板", "fromCommunity": "来自社区", "learnCreate": "学习与创作"}};
+        function applyLang(lang) {
+            const dict = I18N[lang] || I18N.id;
+            document.querySelectorAll('[data-i18n]').forEach(function(el) {
+                const key = el.getAttribute('data-i18n');
+                if (dict[key]) el.innerHTML = dict[key];
+            });
+            document.documentElement.lang = lang;
+            document.querySelectorAll('.lang-select').forEach(function(sel) { sel.value = lang; });
+        }
+        function setLang(lang) {
+            localStorage.setItem('ronaLang', lang);
+            applyLang(lang);
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            applyLang(localStorage.getItem('ronaLang') || 'id');
+        });
+</script>
 </body>
 </html>
