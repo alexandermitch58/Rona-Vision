@@ -479,17 +479,39 @@
             </div>
 
             <!-- API KEY SECTION -->
-            <div id="apikeySection" class="hidden space-y-4 bg-[#131b2e]/90 backdrop-blur p-6 rounded-2xl border border-gray-800 shadow-xl">
-                <h2 class="text-xl font-bold text-white">Konfigurasi API Key</h2>
+            <div id="apikeySection" class="hidden space-y-5 bg-[#131b2e]/90 backdrop-blur p-6 rounded-2xl border border-gray-800 shadow-xl">
                 <div>
-                    <label class="block text-xs uppercase tracking-wider text-gray-400 mb-1">API Key</label>
-                    <input type="password" id="apiKeyInput" value="" placeholder="API key disimpan di server, jangan taruh di kode publik" class="w-full bg-[#0b0f17] border border-gray-700 rounded-lg px-4 py-2.5 text-sm">
+                    <h2 class="text-xl font-bold text-white">Konfigurasi API Key</h2>
+                    <p class="text-xs text-gray-400 mt-1">Kelola banyak penyedia API sekaligus. Setiap penyedia punya endpoint, API key, dan model sendiri. Untuk komersil, API key asli wajib disimpan di server/backend, bukan di kode publik ini.</p>
                 </div>
+
+                <div class="border border-gray-800 rounded-xl p-4 space-y-3 bg-[#0b0f17]/60">
+                    <h3 class="text-sm font-semibold text-white">Tambah Penyedia API</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-gray-400 mb-1">Nama Penyedia</label>
+                            <input type="text" id="newProviderName" placeholder="Contoh: ToAPIs, Penyedia B, Penyedia C" class="w-full bg-[#0b0f17] border border-gray-700 rounded-lg px-4 py-2.5 text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-gray-400 mb-1">Endpoint</label>
+                            <input type="text" id="newProviderEndpoint" placeholder="https://contoh.com/v1" class="w-full bg-[#0b0f17] border border-gray-700 rounded-lg px-4 py-2.5 text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-gray-400 mb-1">API Key</label>
+                            <input type="password" id="newProviderKey" value="" placeholder="API key disimpan di server, jangan taruh di kode publik" class="w-full bg-[#0b0f17] border border-gray-700 rounded-lg px-4 py-2.5 text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-gray-400 mb-1">Model yang Disediakan</label>
+                            <input type="text" id="newProviderModels" placeholder="Contoh: Seedance 2.5, Veo 3.1 Pro" class="w-full bg-[#0b0f17] border border-gray-700 rounded-lg px-4 py-2.5 text-sm">
+                        </div>
+                    </div>
+                    <button onclick="addApiProvider()" class="bg-purple-600 hover:bg-purple-700 text-white px-5 py-2 rounded-lg text-sm font-medium">Tambah Penyedia</button>
+                </div>
+
                 <div>
-                    <label class="block text-xs uppercase tracking-wider text-gray-400 mb-1">Endpoint Model Utama</label>
-                    <input type="text" id="endpointInput" value="https://toapis.com/v1" class="w-full bg-[#0b0f17] border border-gray-700 rounded-lg px-4 py-2.5 text-sm">
+                    <h3 class="text-sm font-semibold text-white mb-2">Penyedia Terdaftar</h3>
+                    <div id="apiProviderList" class="space-y-3"></div>
                 </div>
-                <button onclick="alert('Konfigurasi berhasil disimpan!')" class="bg-purple-600 text-white px-5 py-2 rounded-lg text-sm font-medium">Simpan Konfigurasi</button>
             </div>
 
             <!-- ADMIN PANEL SECTION -->
@@ -707,6 +729,90 @@
             document.getElementById('customModal').classList.add('hidden');
         }
 
+
+        // ===== Multi API Provider Config (demo front-end; simpan key asli di server) =====
+        const API_PROVIDERS_KEY = 'ronaApiProviders';
+        function loadApiProviders() {
+            try {
+                const raw = localStorage.getItem(API_PROVIDERS_KEY);
+                if (raw) return JSON.parse(raw);
+            } catch (e) {}
+            return [{ name: 'ToAPIs (Utama)', endpoint: 'https://toapis.com/v1', key: '', models: 'Seedance 2.5, Seedance 2.0, Veo 3.1 Pro', active: true }];
+        }
+        function saveApiProviders(list) {
+            try { localStorage.setItem(API_PROVIDERS_KEY, JSON.stringify(list)); } catch (e) {}
+        }
+        function maskApiKey(key) {
+            if (!key) return '(belum diisi)';
+            if (key.length <= 4) return '••••';
+            return '••••••••' + key.slice(-4);
+        }
+        function renderApiProviders() {
+            const wrap = document.getElementById('apiProviderList');
+            if (!wrap) return;
+            const list = loadApiProviders();
+            if (!list.length) {
+                wrap.innerHTML = '<p class="text-xs text-gray-500">Belum ada penyedia API. Tambahkan penyedia pertama di atas.</p>';
+                return;
+            }
+            wrap.innerHTML = list.map((pr, i) => `
+                <div class="border border-gray-800 rounded-xl p-4 bg-[#0b0f17]/60">
+                    <div class="flex flex-col sm:flex-row justify-between gap-2">
+                        <div>
+                            <p class="text-sm font-semibold text-white">${pr.name} <span class="text-[10px] px-2 py-0.5 rounded-full ${pr.active ? 'bg-emerald-600/20 text-emerald-300 border border-emerald-500/40' : 'bg-gray-600/20 text-gray-400 border border-gray-600/40'}">${pr.active ? 'Aktif' : 'Nonaktif'}</span></p>
+                            <p class="text-xs text-gray-400 mt-1">Endpoint: ${pr.endpoint}</p>
+                            <p class="text-xs text-gray-400">Model: ${pr.models || '-'}</p>
+                            <p class="text-xs text-gray-400">API Key: ${maskApiKey(pr.key)}</p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 items-start">
+                            <button onclick="toggleApiProvider(${i})" class="bg-[#131b2e] border border-gray-700 hover:border-purple-500 text-gray-200 px-3 py-1.5 rounded-lg text-xs">${pr.active ? 'Nonaktifkan' : 'Aktifkan'}</button>
+                            <button onclick="editApiProviderKey(${i})" class="bg-[#131b2e] border border-gray-700 hover:border-purple-500 text-gray-200 px-3 py-1.5 rounded-lg text-xs">Ganti Key</button>
+                            <button onclick="deleteApiProvider(${i})" class="bg-red-600/10 border border-red-500/40 text-red-300 px-3 py-1.5 rounded-lg text-xs">Hapus</button>
+                        </div>
+                    </div>
+                </div>`).join('');
+        }
+        function addApiProvider() {
+            const name = document.getElementById('newProviderName').value.trim();
+            const endpoint = document.getElementById('newProviderEndpoint').value.trim();
+            const key = document.getElementById('newProviderKey').value.trim();
+            const models = document.getElementById('newProviderModels').value.trim();
+            if (!name || !endpoint) { alert('Nama penyedia dan endpoint wajib diisi.'); return; }
+            const list = loadApiProviders();
+            list.push({ name, endpoint, key, models, active: true });
+            saveApiProviders(list);
+            document.getElementById('newProviderName').value = '';
+            document.getElementById('newProviderEndpoint').value = '';
+            document.getElementById('newProviderKey').value = '';
+            document.getElementById('newProviderModels').value = '';
+            renderApiProviders();
+            alert('Penyedia API ditambahkan.');
+        }
+        function toggleApiProvider(i) {
+            const list = loadApiProviders();
+            if (!list[i]) return;
+            list[i].active = !list[i].active;
+            saveApiProviders(list);
+            renderApiProviders();
+        }
+        function editApiProviderKey(i) {
+            const list = loadApiProviders();
+            if (!list[i]) return;
+            const nk = prompt('Masukkan API key baru untuk ' + list[i].name + ' (kosongkan untuk membatalkan):');
+            if (nk === null || nk.trim() === '') return;
+            list[i].key = nk.trim();
+            saveApiProviders(list);
+            renderApiProviders();
+        }
+        function deleteApiProvider(i) {
+            const list = loadApiProviders();
+            if (!list[i]) return;
+            if (!confirm('Hapus penyedia ' + list[i].name + '?')) return;
+            list.splice(i, 1);
+            saveApiProviders(list);
+            renderApiProviders();
+        }
+
         function switchTabNav(tab) {
             ['Home', 'Studio', 'Gallery', 'Template', 'Agent', 'Pricing', 'Apikey', 'Admin'].forEach(t => {
                 const btn = document.getElementById('nav' + t);
@@ -721,6 +827,7 @@
             if(activeBtn) activeBtn.className = "px-5 py-1.5 rounded-lg text-sm font-medium bg-purple-600 text-white transition";
             const targetSec = document.getElementById(tab.toLowerCase() + 'Section');
             if(targetSec) targetSec.classList.remove('hidden');
+            if (tab === 'apikey') renderApiProviders();
 
             const mainContainer = document.getElementById('mainContentContainer');
             const previewCol = document.getElementById('previewColumn');
