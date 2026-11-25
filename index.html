@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Noxus Vision - Cloud AI Studio</title>
+    <title>Rona Vision - Cloud AI Studio</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-[#0b0f17] text-gray-100 font-sans min-h-screen flex flex-col" style="background-image: linear-gradient(to bottom, rgba(11,15,23,0.6), rgba(11,15,23,0.8)), url('bg.png'); background-size: cover; background-position: center; background-attachment: fixed;">
@@ -12,7 +12,7 @@
     <div id="loginModal" class="fixed inset-0 z-50 flex items-center justify-center px-4 py-6 overflow-y-auto bg-black/60 backdrop-blur-sm" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('bg.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
         <div class="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center max-w-5xl w-full mx-auto p-4">
             <div class="hidden lg:flex flex-col items-center justify-center overflow-hidden rounded-3xl border border-purple-500/30 shadow-2xl bg-[#131b2e]/40 backdrop-blur-md aspect-video">
-                <img src="bg.png" alt="Noxus Vision Artwork" class="w-full h-full object-cover">
+                <img src="bg.png" alt="Rona Vision Artwork" class="w-full h-full object-cover">
             </div>
             <div class="bg-[#131b2e]/50 border border-purple-500/30 p-8 rounded-3xl w-full max-w-md mx-auto shadow-2xl backdrop-blur-md">
                 <div id="formLoginView">
@@ -45,7 +45,7 @@
                 <div id="formSignupView" class="hidden">
                     <div class="text-center mb-6">
                         <h2 class="text-2xl font-bold text-white">Daftar Akun</h2>
-                        <p class="text-xs text-gray-300 mt-1">Buat akun Noxus Vision baru</p>
+                        <p class="text-xs text-gray-300 mt-1">Buat akun Rona Vision baru</p>
                     </div>
                     <form onsubmit="handleSignup(event)" class="space-y-4">
                         <div>
@@ -118,7 +118,7 @@
     <!-- NAVBAR UTAMA -->
     <header class="border-b border-gray-800 bg-[#0e131f]/80 backdrop-blur sticky top-0 z-40 px-6 py-4 flex items-center justify-between">
         <div class="flex items-center space-x-3">
-            <img src="bg.png" alt="Noxus Vision Logo" class="w-10 h-10 rounded-xl object-cover border border-purple-500/40 shadow-lg">
+            <img src="bg.png" alt="Rona Vision Logo" class="w-10 h-10 rounded-xl object-cover border border-purple-500/40 shadow-lg">
             <div>
                 <h1 class="font-bold tracking-wide text-lg">NOXUS VISION</h1>
                 <p class="text-[10px] text-gray-400 tracking-widest uppercase">Cloud AI Studio</p>
@@ -129,6 +129,7 @@
             <button onclick="switchTabNav('studio')" id="navStudio" class="px-5 py-1.5 rounded-lg text-sm font-medium bg-purple-600 text-white transition">Studio</button>
             <button onclick="switchTabNav('gallery')" id="navGallery" class="px-5 py-1.5 rounded-lg text-sm font-medium text-gray-400 hover:text-white transition">Gallery</button>
             <button onclick="switchTabNav('template')" id="navTemplate" class="px-5 py-1.5 rounded-lg text-sm font-medium text-gray-400 hover:text-white transition">Template</button>
+            <button onclick="switchTabNav('agent')" id="navAgent" class="px-5 py-1.5 rounded-lg text-sm font-medium text-gray-400 hover:text-white transition">Agen</button>
             <button onclick="switchTabNav('pricing')" id="navPricing" class="px-5 py-1.5 rounded-lg text-sm font-medium text-gray-400 hover:text-white transition">Harga</button>
             <button onclick="switchTabNav('apikey')" id="navApikey" class="px-5 py-1.5 rounded-lg text-sm font-medium text-gray-400 hover:text-white transition hidden">API Key</button>
             <button onclick="switchTabNav('admin')" id="navAdmin" class="px-5 py-1.5 rounded-lg text-sm font-medium text-gray-400 hover:text-white transition hidden">Admin Panel</button>
@@ -160,7 +161,7 @@
             <!-- BERANDA DASHBOARD -->
             <div id="homeSection" class="hidden space-y-6">
                 <div class="bg-[#131b2e]/90 backdrop-blur border border-purple-500/30 rounded-2xl p-6 shadow-xl space-y-3">
-                    <p class="text-[11px] text-purple-400 tracking-widest uppercase font-semibold">Noxus Vision</p>
+                    <p class="text-[11px] text-purple-400 tracking-widest uppercase font-semibold">Rona Vision</p>
                     <h2 class="text-3xl font-bold text-white">Satu visi, banyak adegan.</h2>
                     <p class="text-sm text-gray-400 max-w-2xl">Buat video dan gambar AI dari prompt atau foto referensi, pakai template siap pakai, simpan preset favorit, dan atur kredit kamu dari satu tempat.</p>
                     <div class="flex flex-wrap gap-2 pt-1">
@@ -196,7 +197,7 @@
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                         <div class="bg-[#131b2e]/90 backdrop-blur border border-gray-800 rounded-2xl p-4 space-y-2">
                             <p class="text-sm font-semibold text-white">Suasana Alam Tenang</p>
-                            <p class="text-[11px] text-gray-500">@noxuscreator • ASMR • Alam</p>
+                            <p class="text-[11px] text-gray-500">@ronacreator • ASMR • Alam</p>
                             <button onclick="switchTabNav('template')" class="text-xs text-purple-400 hover:underline">Coba gaya ini</button>
                         </div>
                         <div class="bg-[#131b2e]/90 backdrop-blur border border-gray-800 rounded-2xl p-4 space-y-2">
@@ -209,6 +210,17 @@
                             <p class="text-[11px] text-gray-500">@kreatorlokal • Iklan • Produk</p>
                             <button onclick="switchTabNav('template')" class="text-xs text-purple-400 hover:underline">Coba gaya ini</button>
                         </div>
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-lg font-bold text-white">Tim Agen Rona</h3>
+                        <button onclick="switchTabNav('agent')" class="text-xs text-purple-400 hover:underline">Lihat Agen</button>
+                    </div>
+                    <div class="bg-[#131b2e]/90 backdrop-blur border border-purple-500/30 rounded-2xl p-4 space-y-2">
+                        <p class="text-sm text-gray-300">Arah • Pijar • Lensa • Warna • Layar • Kas</p>
+                        <p class="text-xs text-gray-400">Satu tim AI yang membantu ide, prompt, hasil, terbit, sampai laporan kredit kamu.</p>
                     </div>
                 </div>
 
@@ -373,6 +385,59 @@
                 <div id="templateGrid" class="grid grid-cols-1 sm:grid-cols-2 gap-4"></div>
             </div>
 
+            <!-- AGENT SECTION -->
+            <div id="agentSection" class="hidden space-y-6">
+                <div>
+                    <h2 class="text-3xl font-bold text-white tracking-wide">Agen Rona</h2>
+                    <p class="text-xs text-gray-400 mt-1">Satu tim AI untuk studio videomu. Kamu beri ide, tim agen yang mengerjakan langkah-langkahnya.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="bg-[#131b2e]/90 backdrop-blur border border-purple-500/30 rounded-2xl p-5 shadow-xl space-y-2">
+                        <p class="text-[11px] text-purple-400 tracking-widest uppercase font-semibold">01 • Koordinator</p>
+                        <p class="font-bold text-white">Arah</p>
+                        <p class="text-xs text-gray-400">Kamu chat satu kali ke Arah, dia membagi tugas ke agen lain dan memastikan semuanya selesai.</p>
+                        <p class="text-[11px] text-purple-300">Status: Siap lewat Inem</p>
+                    </div>
+                    <div class="bg-[#131b2e]/90 backdrop-blur border border-gray-800 rounded-2xl p-5 shadow-xl space-y-2">
+                        <p class="text-[11px] text-purple-400 tracking-widest uppercase font-semibold">02 • Ide & Tren</p>
+                        <p class="font-bold text-white">Pijar</p>
+                        <p class="text-xs text-gray-400">Mencari ide konten, riset tren, dan melihat video kompetitor yang sedang naik.</p>
+                        <button onclick="switchTabNav('template')" class="text-xs text-purple-400 hover:underline">Lihat Template</button>
+                    </div>
+                    <div class="bg-[#131b2e]/90 backdrop-blur border border-gray-800 rounded-2xl p-5 shadow-xl space-y-2">
+                        <p class="text-[11px] text-purple-400 tracking-widest uppercase font-semibold">03 • Prompt & Generate</p>
+                        <p class="font-bold text-white">Lensa</p>
+                        <p class="text-xs text-gray-400">Mengubah ide jadi prompt yang bagus, memilih model Seedance atau Veo, durasi, dan resolusi.</p>
+                        <button onclick="switchTabNav('studio')" class="text-xs text-purple-400 hover:underline">Ke Studio</button>
+                    </div>
+                    <div class="bg-[#131b2e]/90 backdrop-blur border border-gray-800 rounded-2xl p-5 shadow-xl space-y-2">
+                        <p class="text-[11px] text-purple-400 tracking-widest uppercase font-semibold">04 • Editor Hasil</p>
+                        <p class="font-bold text-white">Warna</p>
+                        <p class="text-xs text-gray-400">Memilih hasil terbaik, membuat judul, deskripsi, dan tulisan thumbnail yang menarik.</p>
+                        <button onclick="switchTabNav('gallery')" class="text-xs text-purple-400 hover:underline">Lihat Gallery</button>
+                    </div>
+                    <div class="bg-[#131b2e]/90 backdrop-blur border border-gray-800 rounded-2xl p-5 shadow-xl space-y-2">
+                        <p class="text-[11px] text-purple-400 tracking-widest uppercase font-semibold">05 • Penerbit</p>
+                        <p class="font-bold text-white">Layar</p>
+                        <p class="text-xs text-gray-400">Mengupload ke Facebook Reels dan menyiapkan jadwal YouTube. YouTube tetap menunggu persetujuan kamu dulu.</p>
+                        <button onclick="switchTabNav('gallery')" class="text-xs text-purple-400 hover:underline">Lihat Gallery</button>
+                    </div>
+                    <div class="bg-[#131b2e]/90 backdrop-blur border border-gray-800 rounded-2xl p-5 shadow-xl space-y-2">
+                        <p class="text-[11px] text-purple-400 tracking-widest uppercase font-semibold">06 • Bendahara</p>
+                        <p class="font-bold text-white">Kas</p>
+                        <p class="text-xs text-gray-400">Mengatur kredit, harga paket, dan laporan penjualan mingguan untuk kamu.</p>
+                        <button onclick="switchTabNav('pricing')" class="text-xs text-purple-400 hover:underline">Lihat Harga</button>
+                    </div>
+                </div>
+
+                <div class="bg-[#131b2e]/90 backdrop-blur border border-gray-800 rounded-2xl p-5 shadow-xl space-y-3">
+                    <p class="font-bold text-white text-sm">Cara Kerja Tim</p>
+                    <p class="text-xs text-gray-400">Kamu beri ide ke <span class="text-purple-300">Arah</span> → <span class="text-purple-300">Pijar</span> cari tren → <span class="text-purple-300">Lensa</span> buat prompt → <span class="text-purple-300">Warna</span> poles hasil → <span class="text-purple-300">Layar</span> terbitkan → <span class="text-purple-300">Kas</span> laporkan ke kamu.</p>
+                    <p class="text-[11px] text-gray-500">Untuk sekarang agen-agen ini dijalankan oleh Inem lewat chat. Otomatis penuh di dalam aplikasi menyusul di tahap backend.</p>
+                </div>
+            </div>
+
             <!-- PRICING SECTION -->
             <div id="pricingSection" class="hidden space-y-6">
                 <div>
@@ -503,7 +568,7 @@
             <button onclick="openInfoModal('privacy')" class="text-purple-400 hover:underline">Kebijakan Privasi</button>
             <button onclick="openInfoModal('contact')" class="text-purple-400 hover:underline">Kontak</button>
         </div>
-        <p class="text-[11px] text-gray-600">© 2026 Noxus Vision. Semua hak dilindungi.</p>
+        <p class="text-[11px] text-gray-600">© 2026 Rona Vision. Semua hak dilindungi.</p>
     </footer>
 
     <!-- SCRIPT JAVASCRIPT -->
@@ -634,7 +699,7 @@
         }
 
         function switchTabNav(tab) {
-            ['Home', 'Studio', 'Gallery', 'Template', 'Pricing', 'Apikey', 'Admin'].forEach(t => {
+            ['Home', 'Studio', 'Gallery', 'Template', 'Agent', 'Pricing', 'Apikey', 'Admin'].forEach(t => {
                 const btn = document.getElementById('nav' + t);
                 if(btn) {
                     const isHidden = btn.classList.contains('hidden');
@@ -752,13 +817,13 @@
             modal.classList.remove('hidden');
             if (type === 'terms') {
                 title.innerText = "Syarat Penggunaan";
-                body.innerHTML = "<p>Dengan menggunakan Noxus Vision, kamu setuju menggunakan layanan ini untuk membuat konten yang sah dan tidak melanggar hak orang lain.</p><p>Kredit yang sudah dipakai untuk generate tidak dapat dikembalikan, kecuali generate gagal dari sistem kami.</p><p>Harga dan biaya kredit dapat berubah, perubahan akan diumumkan di halaman Harga.</p>";
+                body.innerHTML = "<p>Dengan menggunakan Rona Vision, kamu setuju menggunakan layanan ini untuk membuat konten yang sah dan tidak melanggar hak orang lain.</p><p>Kredit yang sudah dipakai untuk generate tidak dapat dikembalikan, kecuali generate gagal dari sistem kami.</p><p>Harga dan biaya kredit dapat berubah, perubahan akan diumumkan di halaman Harga.</p>";
             } else if (type === 'privacy') {
                 title.innerText = "Kebijakan Privasi";
                 body.innerHTML = "<p>Kami menyimpan email, riwayat prompt, preset, dan hasil generate untuk menjalankan akun kamu.</p><p>Kami tidak menjual data pribadi kamu ke pihak lain.</p><p>Untuk menghapus akun dan data, hubungi kami lewat Kontak.</p>";
             } else if (type === 'contact') {
                 title.innerText = "Kontak";
-                body.innerHTML = "<p>Untuk bantuan, top up manual, dan jasa buat video, hubungi pemilik Noxus Vision lewat Facebook Janey Ericco.</p><p>Jam layanan: setiap hari, dibalas secepatnya.</p>";
+                body.innerHTML = "<p>Untuk bantuan, top up manual, dan jasa buat video, hubungi pemilik Rona Vision lewat Facebook Janey Ericco.</p><p>Jam layanan: setiap hari, dibalas secepatnya.</p>";
             }
         }
 
@@ -863,10 +928,10 @@
         }
 
         const noxusTemplates = [
-            { name: 'ASMR Hutan Tenang', creator: '@noxuscreator', tags: 'ASMR Alam Tenang', prompt: 'Static shot of a dense green forest in the morning, soft sunlight through leaves, gentle wind, birds chirping in the distance, calm atmosphere, no people, ultra realistic', model: 'Seedance 2.0', duration: '15s', resolution: '1080p', aspect: '9:16', mode: 'text-to-video' },
+            { name: 'ASMR Hutan Tenang', creator: '@ronacreator', tags: 'ASMR Alam Tenang', prompt: 'Static shot of a dense green forest in the morning, soft sunlight through leaves, gentle wind, birds chirping in the distance, calm atmosphere, no people, ultra realistic', model: 'Seedance 2.0', duration: '15s', resolution: '1080p', aspect: '9:16', mode: 'text-to-video' },
             { name: 'Drama Kota Malam', creator: '@studioindonesia', tags: 'Drama Sinematik Kota', prompt: 'Cinematic night scene in a rainy city street, a lone character walks under neon lights, emotional close up, realistic lighting, film look', model: 'Veo 3.1 Pro', duration: '15s', resolution: '1080p', aspect: '16:9', mode: 'text-to-video' },
             { name: 'Iklan Produk Bersih', creator: '@kreatorlokal', tags: 'Iklan Produk UGC', prompt: 'Clean product showcase on a bright table, slow rotating camera, soft studio light, premium commercial look, no text', model: 'Seedance 2.5', duration: '10s', resolution: '1080p', aspect: '9:16', mode: 'text-to-video' },
-            { name: 'Perjalanan & Pemandangan', creator: '@noxuscreator', tags: 'Travel Alam Montage', prompt: 'Aerial drone shot over green hills and a winding river at sunrise, smooth forward movement, vibrant colors, cinematic travel video', model: 'Veo 3.1 Pro', duration: '15s', resolution: '1080p', aspect: '16:9', mode: 'text-to-video' },
+            { name: 'Perjalanan & Pemandangan', creator: '@ronacreator', tags: 'Travel Alam Montage', prompt: 'Aerial drone shot over green hills and a winding river at sunrise, smooth forward movement, vibrant colors, cinematic travel video', model: 'Veo 3.1 Pro', duration: '15s', resolution: '1080p', aspect: '16:9', mode: 'text-to-video' },
             { name: 'Klip Bicara & Podcast', creator: '@studioindonesia', tags: 'Podcast Bicara Lip-sync', prompt: 'A person speaking naturally to camera in a cozy studio, clear voice, lip sync, soft background blur, realistic', model: 'Seedance 2.5', duration: '15s', resolution: '1080p', aspect: '9:16', mode: 'text-to-video' },
             { name: 'Fashion & Gaya', creator: '@kreatorlokal', tags: 'Fashion Photoshoot Gaya', prompt: 'Fashion model posing in a modern studio, elegant outfit, slow camera movement, editorial lighting, ultra realistic', model: 'Seedance 2.5', duration: '10s', resolution: '1080p', aspect: '9:16', mode: 'text-to-video' }
         ];
@@ -1196,7 +1261,7 @@
             const item = renderedVideoGallery[idx];
             const a = document.createElement('a');
             a.href = item.url;
-            a.download = item.type === 'image' ? 'noxus-vision-image.png' : 'noxus-vision-video.mp4';
+            a.download = item.type === 'image' ? 'rona-vision-image.png' : 'rona-vision-video.mp4';
             a.target = '_blank';
             a.click();
         }
