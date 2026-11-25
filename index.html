@@ -8,6 +8,11 @@
     <style>
         /* Cegah scroll ganda: kunci scroll halaman utama saat layar depan/login terbuka */
         body:has(#loginModal:not(.hidden)) { overflow: hidden; }
+        /* Animasi avatar Agen Rona */
+        @keyframes agentFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+        .agent-avatar { animation: agentFloat 3s ease-in-out infinite; }
+        @keyframes agentGlow { 0%, 100% { box-shadow: 0 0 0 0 rgba(168,85,247,0.45); } 50% { box-shadow: 0 0 0 7px rgba(168,85,247,0); } }
+        .agent-avatar-ring { animation: agentGlow 2.4s ease-in-out infinite; }
     </style>
 </head>
 <body class="bg-[#0b0f17] text-gray-100 font-sans min-h-screen flex flex-col" style="background-image: linear-gradient(to bottom, rgba(11,15,23,0.6), rgba(11,15,23,0.8)), url('bg.png'); background-size: cover; background-position: center; background-attachment: fixed;">
@@ -33,12 +38,12 @@
                     <img src="thumbs/fashion.jpg" alt="Contoh karya produk fashion" class="w-full h-20 object-cover rounded-xl border border-purple-500/30">
                 </div>
                 <div class="flex flex-wrap gap-1.5">
-                    <span class="text-[11px] text-gray-300 border border-gray-700 bg-[#0b0f17]/60 px-2.5 py-1 rounded-full">Arah</span>
-                    <span class="text-[11px] text-gray-300 border border-gray-700 bg-[#0b0f17]/60 px-2.5 py-1 rounded-full">Pijar</span>
-                    <span class="text-[11px] text-gray-300 border border-gray-700 bg-[#0b0f17]/60 px-2.5 py-1 rounded-full">Lensa</span>
-                    <span class="text-[11px] text-gray-300 border border-gray-700 bg-[#0b0f17]/60 px-2.5 py-1 rounded-full">Warna</span>
-                    <span class="text-[11px] text-gray-300 border border-gray-700 bg-[#0b0f17]/60 px-2.5 py-1 rounded-full">Layar</span>
-                    <span class="text-[11px] text-gray-300 border border-gray-700 bg-[#0b0f17]/60 px-2.5 py-1 rounded-full">Kas</span>
+                    <span class="inline-flex items-center gap-1.5 text-[11px] text-gray-200 border border-gray-700 bg-[#0b0f17]/60 pl-1 pr-2.5 py-1 rounded-full"><img src="avatars/arah.jpg" alt="Avatar Arah" class="w-5 h-5 rounded-full object-cover">Arah</span>
+                    <span class="inline-flex items-center gap-1.5 text-[11px] text-gray-200 border border-gray-700 bg-[#0b0f17]/60 pl-1 pr-2.5 py-1 rounded-full"><img src="avatars/pijar.jpg" alt="Avatar Pijar" class="w-5 h-5 rounded-full object-cover">Pijar</span>
+                    <span class="inline-flex items-center gap-1.5 text-[11px] text-gray-200 border border-gray-700 bg-[#0b0f17]/60 pl-1 pr-2.5 py-1 rounded-full"><img src="avatars/lensa.jpg" alt="Avatar Lensa" class="w-5 h-5 rounded-full object-cover">Lensa</span>
+                    <span class="inline-flex items-center gap-1.5 text-[11px] text-gray-200 border border-gray-700 bg-[#0b0f17]/60 pl-1 pr-2.5 py-1 rounded-full"><img src="avatars/warna.jpg" alt="Avatar Warna" class="w-5 h-5 rounded-full object-cover">Warna</span>
+                    <span class="inline-flex items-center gap-1.5 text-[11px] text-gray-200 border border-gray-700 bg-[#0b0f17]/60 pl-1 pr-2.5 py-1 rounded-full"><img src="avatars/layar.jpg" alt="Avatar Layar" class="w-5 h-5 rounded-full object-cover">Layar</span>
+                    <span class="inline-flex items-center gap-1.5 text-[11px] text-gray-200 border border-gray-700 bg-[#0b0f17]/60 pl-1 pr-2.5 py-1 rounded-full"><img src="avatars/kas.jpg" alt="Avatar Kas" class="w-5 h-5 rounded-full object-cover">Kas</span>
                     <span class="text-[11px] text-purple-300 px-1 py-1">— tim Agen Rona siap membantu</span>
                 </div>
             </div>
@@ -143,12 +148,18 @@
                 <h2 class="text-2xl font-bold text-white">Tim Agen Rona</h2>
                 <p class="text-xs text-gray-400">Enam agen dengan tugas masing-masing, dari ide sampai laporan. Kamu cukup memberi perintah sekali.</p>
                 <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                    <div class="bg-[#131b2e]/60 backdrop-blur border border-gray-800 rounded-2xl p-4 space-y-1"><p class="text-sm font-semibold text-white">01 • Arah</p><p class="text-[11px] text-gray-400">Koordinator, membagi tugas ke agen lain.</p></div>
-                    <div class="bg-[#131b2e]/60 backdrop-blur border border-gray-800 rounded-2xl p-4 space-y-1"><p class="text-sm font-semibold text-white">02 • Pijar</p><p class="text-[11px] text-gray-400">Ide &amp; tren, riset kompetitor.</p></div>
-                    <div class="bg-[#131b2e]/60 backdrop-blur border border-gray-800 rounded-2xl p-4 space-y-1"><p class="text-sm font-semibold text-white">03 • Lensa</p><p class="text-[11px] text-gray-400">Prompt &amp; generate, pilih model terbaik.</p></div>
-                    <div class="bg-[#131b2e]/60 backdrop-blur border border-gray-800 rounded-2xl p-4 space-y-1"><p class="text-sm font-semibold text-white">04 • Warna</p><p class="text-[11px] text-gray-400">Editor hasil, judul &amp; thumbnail.</p></div>
-                    <div class="bg-[#131b2e]/60 backdrop-blur border border-gray-800 rounded-2xl p-4 space-y-1"><p class="text-sm font-semibold text-white">05 • Layar</p><p class="text-[11px] text-gray-400">Penerbit ke Facebook &amp; YouTube.</p></div>
-                    <div class="bg-[#131b2e]/60 backdrop-blur border border-gray-800 rounded-2xl p-4 space-y-1"><p class="text-sm font-semibold text-white">06 • Kas</p><p class="text-[11px] text-gray-400">Bendahara, kredit &amp; laporan.</p></div>
+                    <div class="bg-[#131b2e]/60 backdrop-blur border border-gray-800 rounded-2xl p-4 space-y-1"><img src="avatars/arah.jpg" alt="Avatar Arah" class="agent-avatar w-11 h-11 rounded-full object-cover border border-purple-500/50" style="animation-delay:0s">
+                    <p class="text-sm font-semibold text-white">01 • Arah</p><p class="text-[11px] text-gray-400">Koordinator, membagi tugas ke agen lain.</p></div>
+                    <div class="bg-[#131b2e]/60 backdrop-blur border border-gray-800 rounded-2xl p-4 space-y-1"><img src="avatars/pijar.jpg" alt="Avatar Pijar" class="agent-avatar w-11 h-11 rounded-full object-cover border border-purple-500/50" style="animation-delay:0.4s">
+                    <p class="text-sm font-semibold text-white">02 • Pijar</p><p class="text-[11px] text-gray-400">Ide &amp; tren, riset kompetitor.</p></div>
+                    <div class="bg-[#131b2e]/60 backdrop-blur border border-gray-800 rounded-2xl p-4 space-y-1"><img src="avatars/lensa.jpg" alt="Avatar Lensa" class="agent-avatar w-11 h-11 rounded-full object-cover border border-purple-500/50" style="animation-delay:0.8s">
+                    <p class="text-sm font-semibold text-white">03 • Lensa</p><p class="text-[11px] text-gray-400">Prompt &amp; generate, pilih model terbaik.</p></div>
+                    <div class="bg-[#131b2e]/60 backdrop-blur border border-gray-800 rounded-2xl p-4 space-y-1"><img src="avatars/warna.jpg" alt="Avatar Warna" class="agent-avatar w-11 h-11 rounded-full object-cover border border-purple-500/50" style="animation-delay:1.2s">
+                    <p class="text-sm font-semibold text-white">04 • Warna</p><p class="text-[11px] text-gray-400">Editor hasil, judul &amp; thumbnail.</p></div>
+                    <div class="bg-[#131b2e]/60 backdrop-blur border border-gray-800 rounded-2xl p-4 space-y-1"><img src="avatars/layar.jpg" alt="Avatar Layar" class="agent-avatar w-11 h-11 rounded-full object-cover border border-purple-500/50" style="animation-delay:1.6s">
+                    <p class="text-sm font-semibold text-white">05 • Layar</p><p class="text-[11px] text-gray-400">Penerbit ke Facebook &amp; YouTube.</p></div>
+                    <div class="bg-[#131b2e]/60 backdrop-blur border border-gray-800 rounded-2xl p-4 space-y-1"><img src="avatars/kas.jpg" alt="Avatar Kas" class="agent-avatar w-11 h-11 rounded-full object-cover border border-purple-500/50" style="animation-delay:2s">
+                    <p class="text-sm font-semibold text-white">06 • Kas</p><p class="text-[11px] text-gray-400">Bendahara, kredit &amp; laporan.</p></div>
                 </div>
             </section>
 
@@ -590,36 +601,42 @@
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div class="bg-[#131b2e]/90 backdrop-blur border border-purple-500/30 rounded-2xl p-5 shadow-xl space-y-2">
+                        <img src="avatars/arah.jpg" alt="Avatar Arah" class="agent-avatar agent-avatar-ring w-16 h-16 rounded-full object-cover border-2 border-purple-500/60" style="animation-delay:0s">
                         <p class="text-[11px] text-purple-400 tracking-widest uppercase font-semibold">01 • Koordinator</p>
                         <p class="font-bold text-white">Arah</p>
                         <p class="text-xs text-gray-400">Kamu chat satu kali ke Arah, dia membagi tugas ke agen lain dan memastikan semuanya selesai.</p>
                         <p class="text-[11px] text-purple-300">Status: Siap lewat Inem</p>
                     </div>
                     <div class="bg-[#131b2e]/90 backdrop-blur border border-gray-800 rounded-2xl p-5 shadow-xl space-y-2">
+                        <img src="avatars/pijar.jpg" alt="Avatar Pijar" class="agent-avatar agent-avatar-ring w-16 h-16 rounded-full object-cover border-2 border-purple-500/60" style="animation-delay:0.4s">
                         <p class="text-[11px] text-purple-400 tracking-widest uppercase font-semibold">02 • Ide & Tren</p>
                         <p class="font-bold text-white">Pijar</p>
                         <p class="text-xs text-gray-400">Mencari ide konten, riset tren, dan melihat video kompetitor yang sedang naik.</p>
                         <button onclick="switchTabNav('template')" class="text-xs text-purple-400 hover:underline">Lihat Template</button>
                     </div>
                     <div class="bg-[#131b2e]/90 backdrop-blur border border-gray-800 rounded-2xl p-5 shadow-xl space-y-2">
+                        <img src="avatars/lensa.jpg" alt="Avatar Lensa" class="agent-avatar agent-avatar-ring w-16 h-16 rounded-full object-cover border-2 border-purple-500/60" style="animation-delay:0.8s">
                         <p class="text-[11px] text-purple-400 tracking-widest uppercase font-semibold">03 • Prompt & Generate</p>
                         <p class="font-bold text-white">Lensa</p>
                         <p class="text-xs text-gray-400">Mengubah ide jadi prompt yang bagus, memilih model Seedance atau Veo, durasi, dan resolusi.</p>
                         <button onclick="switchTabNav('studio')" class="text-xs text-purple-400 hover:underline">Ke Studio</button>
                     </div>
                     <div class="bg-[#131b2e]/90 backdrop-blur border border-gray-800 rounded-2xl p-5 shadow-xl space-y-2">
+                        <img src="avatars/warna.jpg" alt="Avatar Warna" class="agent-avatar agent-avatar-ring w-16 h-16 rounded-full object-cover border-2 border-purple-500/60" style="animation-delay:1.2s">
                         <p class="text-[11px] text-purple-400 tracking-widest uppercase font-semibold">04 • Editor Hasil</p>
                         <p class="font-bold text-white">Warna</p>
                         <p class="text-xs text-gray-400">Memilih hasil terbaik, membuat judul, deskripsi, dan tulisan thumbnail yang menarik.</p>
                         <button onclick="switchTabNav('gallery')" class="text-xs text-purple-400 hover:underline">Lihat Gallery</button>
                     </div>
                     <div class="bg-[#131b2e]/90 backdrop-blur border border-gray-800 rounded-2xl p-5 shadow-xl space-y-2">
+                        <img src="avatars/layar.jpg" alt="Avatar Layar" class="agent-avatar agent-avatar-ring w-16 h-16 rounded-full object-cover border-2 border-purple-500/60" style="animation-delay:1.6s">
                         <p class="text-[11px] text-purple-400 tracking-widest uppercase font-semibold">05 • Penerbit</p>
                         <p class="font-bold text-white">Layar</p>
                         <p class="text-xs text-gray-400">Mengupload ke Facebook Reels dan menyiapkan jadwal YouTube. YouTube tetap menunggu persetujuan kamu dulu.</p>
                         <button onclick="switchTabNav('gallery')" class="text-xs text-purple-400 hover:underline">Lihat Gallery</button>
                     </div>
                     <div class="bg-[#131b2e]/90 backdrop-blur border border-gray-800 rounded-2xl p-5 shadow-xl space-y-2">
+                        <img src="avatars/kas.jpg" alt="Avatar Kas" class="agent-avatar agent-avatar-ring w-16 h-16 rounded-full object-cover border-2 border-purple-500/60" style="animation-delay:2s">
                         <p class="text-[11px] text-purple-400 tracking-widest uppercase font-semibold">06 • Bendahara</p>
                         <p class="font-bold text-white">Kas</p>
                         <p class="text-xs text-gray-400">Mengatur kredit, harga paket, dan laporan penjualan mingguan untuk kamu.</p>
