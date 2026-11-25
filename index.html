@@ -125,8 +125,10 @@
             </div>
         </div>
         <nav class="flex space-x-1 bg-[#131b2e]/90 backdrop-blur p-1 rounded-xl border border-gray-800">
+            <button onclick="switchTabNav('home')" id="navHome" class="px-5 py-1.5 rounded-lg text-sm font-medium text-gray-400 hover:text-white transition">Beranda</button>
             <button onclick="switchTabNav('studio')" id="navStudio" class="px-5 py-1.5 rounded-lg text-sm font-medium bg-purple-600 text-white transition">Studio</button>
             <button onclick="switchTabNav('gallery')" id="navGallery" class="px-5 py-1.5 rounded-lg text-sm font-medium text-gray-400 hover:text-white transition">Gallery</button>
+            <button onclick="switchTabNav('template')" id="navTemplate" class="px-5 py-1.5 rounded-lg text-sm font-medium text-gray-400 hover:text-white transition">Template</button>
             <button onclick="switchTabNav('pricing')" id="navPricing" class="px-5 py-1.5 rounded-lg text-sm font-medium text-gray-400 hover:text-white transition">Harga</button>
             <button onclick="switchTabNav('apikey')" id="navApikey" class="px-5 py-1.5 rounded-lg text-sm font-medium text-gray-400 hover:text-white transition hidden">API Key</button>
             <button onclick="switchTabNav('admin')" id="navAdmin" class="px-5 py-1.5 rounded-lg text-sm font-medium text-gray-400 hover:text-white transition hidden">Admin Panel</button>
@@ -155,6 +157,80 @@
         <!-- KONTEN KIRI -->
         <div id="mainContentContainer" class="lg:col-span-2 space-y-6">
             
+            <!-- BERANDA DASHBOARD -->
+            <div id="homeSection" class="hidden space-y-6">
+                <div class="bg-[#131b2e]/90 backdrop-blur border border-purple-500/30 rounded-2xl p-6 shadow-xl space-y-3">
+                    <p class="text-[11px] text-purple-400 tracking-widest uppercase font-semibold">Noxus Vision</p>
+                    <h2 class="text-3xl font-bold text-white">Satu visi, banyak adegan.</h2>
+                    <p class="text-sm text-gray-400 max-w-2xl">Buat video dan gambar AI dari prompt atau foto referensi, pakai template siap pakai, simpan preset favorit, dan atur kredit kamu dari satu tempat.</p>
+                    <div class="flex flex-wrap gap-2 pt-1">
+                        <button onclick="switchTabNav('studio')" class="bg-gradient-to-r from-purple-600 via-indigo-600 to-pink-600 text-white px-5 py-2.5 rounded-xl text-sm font-bold transition">Mulai Buat Video</button>
+                        <button onclick="switchTabNav('template')" class="bg-purple-600/20 border border-purple-500/40 text-purple-200 px-5 py-2.5 rounded-xl text-sm font-medium transition">Lihat Template</button>
+                        <button onclick="switchTabNav('pricing')" class="bg-gray-800 text-gray-200 px-5 py-2.5 rounded-xl text-sm font-medium transition">Lihat Harga</button>
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-lg font-bold text-white">Proyek Terakhir</h3>
+                        <button onclick="switchTabNav('gallery')" class="text-xs text-purple-400 hover:underline">Lihat Gallery</button>
+                    </div>
+                    <div id="homeRecentProjects" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="bg-[#131b2e]/90 backdrop-blur border border-gray-800 rounded-2xl p-5 text-center space-y-2">
+                            <p class="text-sm text-gray-400">Belum ada proyek. Buat video pertamamu dari Studio.</p>
+                            <button onclick="switchTabNav('studio')" class="bg-purple-600 text-white px-4 py-2 rounded-xl text-xs font-medium">Buat Proyek</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-lg font-bold text-white">Template Pilihan</h3>
+                        <button onclick="switchTabNav('template')" class="text-xs text-purple-400 hover:underline">Lihat Semua Template</button>
+                    </div>
+                    <div id="homeTemplatePicks" class="grid grid-cols-1 sm:grid-cols-3 gap-4"></div>
+                </div>
+
+                <div class="space-y-3">
+                    <h3 class="text-lg font-bold text-white">Dari Komunitas</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div class="bg-[#131b2e]/90 backdrop-blur border border-gray-800 rounded-2xl p-4 space-y-2">
+                            <p class="text-sm font-semibold text-white">Suasana Alam Tenang</p>
+                            <p class="text-[11px] text-gray-500">@noxuscreator • ASMR • Alam</p>
+                            <button onclick="switchTabNav('template')" class="text-xs text-purple-400 hover:underline">Coba gaya ini</button>
+                        </div>
+                        <div class="bg-[#131b2e]/90 backdrop-blur border border-gray-800 rounded-2xl p-4 space-y-2">
+                            <p class="text-sm font-semibold text-white">Adegan Kota Malam</p>
+                            <p class="text-[11px] text-gray-500">@studioindonesia • Sinematik • Kota</p>
+                            <button onclick="switchTabNav('template')" class="text-xs text-purple-400 hover:underline">Coba gaya ini</button>
+                        </div>
+                        <div class="bg-[#131b2e]/90 backdrop-blur border border-gray-800 rounded-2xl p-4 space-y-2">
+                            <p class="text-sm font-semibold text-white">Produk & Fashion</p>
+                            <p class="text-[11px] text-gray-500">@kreatorlokal • Iklan • Produk</p>
+                            <button onclick="switchTabNav('template')" class="text-xs text-purple-400 hover:underline">Coba gaya ini</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <h3 class="text-lg font-bold text-white">Belajar & Buat</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div class="bg-[#131b2e]/90 backdrop-blur border border-gray-800 rounded-2xl p-4 space-y-2">
+                            <p class="text-sm font-semibold text-white">1. Tulis Prompt yang Jelas</p>
+                            <p class="text-xs text-gray-400">Sebutkan subjek, tempat, cahaya, dan gerakan kamera.</p>
+                        </div>
+                        <div class="bg-[#131b2e]/90 backdrop-blur border border-gray-800 rounded-2xl p-4 space-y-2">
+                            <p class="text-sm font-semibold text-white">2. Pilih Model yang Pas</p>
+                            <p class="text-xs text-gray-400">Seedance untuk audio dan lip-sync, Veo untuk sinematik.</p>
+                        </div>
+                        <div class="bg-[#131b2e]/90 backdrop-blur border border-gray-800 rounded-2xl p-4 space-y-2">
+                            <p class="text-sm font-semibold text-white">3. Simpan sebagai Preset</p>
+                            <p class="text-xs text-gray-400">Setting yang berhasil bisa dipakai lagi sekali klik.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- STUDIO WORKSPACE -->
             <div id="studioSection" class="space-y-6">
                 <div class="flex space-x-3 bg-[#131b2e]/90 backdrop-blur p-1.5 rounded-xl border border-gray-800 w-fit">
@@ -285,6 +361,16 @@
                         <p class="text-xs text-gray-500 italic">Belum ada foto referensi yang diunggah.</p>
                     </div>
                 </div>
+            </div>
+
+            <!-- TEMPLATE SECTION -->
+            <div id="templateSection" class="hidden space-y-6">
+                <div>
+                    <h2 class="text-3xl font-bold text-white tracking-wide">Template Siap Pakai</h2>
+                    <p class="text-xs text-gray-400 mt-1">Pilih gaya adegan, pakai dengan prompt kamu sendiri, lalu simpan sebagai preset favorit kalau hasilnya bagus.</p>
+                </div>
+                <input type="text" id="templateSearchInput" oninput="renderTemplates()" placeholder="Cari template, contoh: alam, drama, iklan..." class="w-full bg-[#0b0f17] border border-gray-700 rounded-xl px-4 py-3 text-sm text-gray-200 focus:outline-none focus:border-purple-500 transition">
+                <div id="templateGrid" class="grid grid-cols-1 sm:grid-cols-2 gap-4"></div>
             </div>
 
             <!-- PRICING SECTION -->
@@ -479,7 +565,7 @@
             }
             renderAdminTable();
             loadPresets();
-            switchTabNav('studio');
+            switchTabNav('home');
         }
 
         function handleSignup(e) {
@@ -548,7 +634,7 @@
         }
 
         function switchTabNav(tab) {
-            ['Studio', 'Gallery', 'Pricing', 'Apikey', 'Admin'].forEach(t => {
+            ['Home', 'Studio', 'Gallery', 'Template', 'Pricing', 'Apikey', 'Admin'].forEach(t => {
                 const btn = document.getElementById('nav' + t);
                 if(btn) {
                     const isHidden = btn.classList.contains('hidden');
@@ -574,6 +660,8 @@
             }
 
             if(tab === 'gallery') renderGalleryViews();
+            if(tab === 'home') { renderTemplates(); renderRecentProjects(); }
+            if(tab === 'template') renderTemplates();
             if(tab === 'admin') renderAdminTable();
         }
 
@@ -774,6 +862,71 @@
             });
         }
 
+        const noxusTemplates = [
+            { name: 'ASMR Hutan Tenang', creator: '@noxuscreator', tags: 'ASMR Alam Tenang', prompt: 'Static shot of a dense green forest in the morning, soft sunlight through leaves, gentle wind, birds chirping in the distance, calm atmosphere, no people, ultra realistic', model: 'Seedance 2.0', duration: '15s', resolution: '1080p', aspect: '9:16', mode: 'text-to-video' },
+            { name: 'Drama Kota Malam', creator: '@studioindonesia', tags: 'Drama Sinematik Kota', prompt: 'Cinematic night scene in a rainy city street, a lone character walks under neon lights, emotional close up, realistic lighting, film look', model: 'Veo 3.1 Pro', duration: '15s', resolution: '1080p', aspect: '16:9', mode: 'text-to-video' },
+            { name: 'Iklan Produk Bersih', creator: '@kreatorlokal', tags: 'Iklan Produk UGC', prompt: 'Clean product showcase on a bright table, slow rotating camera, soft studio light, premium commercial look, no text', model: 'Seedance 2.5', duration: '10s', resolution: '1080p', aspect: '9:16', mode: 'text-to-video' },
+            { name: 'Perjalanan & Pemandangan', creator: '@noxuscreator', tags: 'Travel Alam Montage', prompt: 'Aerial drone shot over green hills and a winding river at sunrise, smooth forward movement, vibrant colors, cinematic travel video', model: 'Veo 3.1 Pro', duration: '15s', resolution: '1080p', aspect: '16:9', mode: 'text-to-video' },
+            { name: 'Klip Bicara & Podcast', creator: '@studioindonesia', tags: 'Podcast Bicara Lip-sync', prompt: 'A person speaking naturally to camera in a cozy studio, clear voice, lip sync, soft background blur, realistic', model: 'Seedance 2.5', duration: '15s', resolution: '1080p', aspect: '9:16', mode: 'text-to-video' },
+            { name: 'Fashion & Gaya', creator: '@kreatorlokal', tags: 'Fashion Photoshoot Gaya', prompt: 'Fashion model posing in a modern studio, elegant outfit, slow camera movement, editorial lighting, ultra realistic', model: 'Seedance 2.5', duration: '10s', resolution: '1080p', aspect: '9:16', mode: 'text-to-video' }
+        ];
+
+        function templateCreditCost(template) {
+            const seconds = parseInt(template.duration, 10) || 15;
+            const perSecond = CREDIT_COST_PER_SECOND[template.model] || 1.5;
+            const multiplier = CREDIT_RES_MULTIPLIER[template.resolution] || 1;
+            return Math.ceil(seconds * perSecond * multiplier);
+        }
+
+        function applyTemplate(index) {
+            const template = noxusTemplates[index];
+            if (!template) return;
+            switchTabNav('studio');
+            document.getElementById('promptInput').value = template.prompt;
+            updateCharCount();
+            setGeneratorMode(template.mode);
+            selectModel(template.model);
+            setDuration(template.duration);
+            setResolution(template.resolution);
+            setAspect(template.aspect);
+            alert('Template "' + template.name + '" sudah dimuat ke Studio. Kamu bisa ubah prompt-nya lalu generate.');
+        }
+
+        function renderTemplates() {
+            const grid = document.getElementById('templateGrid');
+            const homePicks = document.getElementById('homeTemplatePicks');
+            const keyword = (document.getElementById('templateSearchInput')?.value || '').toLowerCase();
+            const filtered = noxusTemplates.filter(t => (t.name + ' ' + t.tags + ' ' + t.creator).toLowerCase().includes(keyword));
+            const makeCard = function(template, index) {
+                return '<div class="bg-[#131b2e]/90 backdrop-blur border border-gray-800 rounded-2xl p-5 shadow-xl space-y-2">' +
+                    '<p class="font-bold text-white text-sm">' + template.name + '</p>' +
+                    '<p class="text-[11px] text-gray-500">' + template.creator + ' • ' + template.tags + '</p>' +
+                    '<p class="text-xs text-gray-400">' + template.model + ' • ' + template.duration + ' • ' + template.resolution + ' • ' + template.aspect + '</p>' +
+                    '<p class="text-xs text-purple-300 font-semibold">Perkiraan ⚡ ' + templateCreditCost(template) + ' Kredit</p>' +
+                    '<button onclick="applyTemplate(' + index + ')" class="w-full bg-purple-600 hover:bg-purple-700 text-white py-2 rounded-xl text-sm font-medium transition">Pakai Template</button>' +
+                    '</div>';
+            };
+            if (grid) {
+                grid.innerHTML = filtered.length ? filtered.map(t => makeCard(t, noxusTemplates.indexOf(t))).join('') : '<p class="text-xs text-gray-500 italic col-span-full">Template tidak ditemukan.</p>';
+            }
+            if (homePicks) {
+                homePicks.innerHTML = noxusTemplates.slice(0, 3).map((t, i) => makeCard(t, i)).join('');
+            }
+        }
+
+        function renderRecentProjects() {
+            const container = document.getElementById('homeRecentProjects');
+            if (!container) return;
+            if (!renderedVideoGallery.length) return;
+            container.innerHTML = renderedVideoGallery.slice(-4).reverse().map(function(item) {
+                return '<div class="bg-[#131b2e]/90 backdrop-blur border border-gray-800 rounded-2xl p-4 space-y-2">' +
+                    '<p class="text-sm font-semibold text-white truncate">' + item.title + '</p>' +
+                    '<p class="text-[11px] text-purple-400">' + item.meta + '</p>' +
+                    '<button onclick="switchTabNav(\'gallery\')" class="text-xs text-purple-400 hover:underline">Lihat di Gallery</button>' +
+                    '</div>';
+            }).join('');
+        }
+
         function selectModel(modelName) {
             selectedModel = modelName;
             document.querySelectorAll('.model-card').forEach(c => c.className = "model-card border-2 border-gray-800 bg-[#0b0f17] p-4 rounded-xl cursor-pointer transition hover:border-gray-600");
@@ -913,6 +1066,7 @@
                     document.getElementById('videoPlaceholder').classList.add('hidden');
                     renderedVideoGallery.push({ type: 'video', url: dummyVideoUrl, title: prompt, meta: metaString });
                 }
+                renderRecentProjects();
                 alert("Generasi konten berhasil diproses!");
             }, 2500);
         }
@@ -1147,6 +1301,8 @@
             loadPresets();
         updateCreditCost();
         updateCreditDisplay();
+        renderTemplates();
+        renderRecentProjects();
     </script>
 </body>
 </html>
