@@ -184,6 +184,21 @@
                     </div>
                 </div>
 
+                <!-- PRESET FAVORIT -->
+                <div class="bg-[#131b2e]/90 backdrop-blur border border-gray-800 rounded-2xl p-5 shadow-xl space-y-3">
+                    <div class="flex justify-between items-center">
+                        <label class="text-sm font-medium text-gray-300">Preset Favorit</label>
+                        <span class="text-[11px] text-purple-400">Simpan setting, pakai lagi sekali klik</span>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-2">
+                        <input type="text" id="presetNameInput" placeholder="Nama preset, contoh: Andalan Sinematik" class="flex-1 bg-[#0b0f17] border border-gray-700 rounded-xl px-4 py-2.5 text-sm text-gray-200 focus:outline-none focus:border-purple-500 transition">
+                        <button type="button" onclick="savePreset()" class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2.5 rounded-xl text-sm font-medium transition whitespace-nowrap">Simpan Preset</button>
+                    </div>
+                    <div id="presetList" class="flex flex-wrap gap-2">
+                        <p class="text-xs text-gray-500 italic">Belum ada preset favorit.</p>
+                    </div>
+                </div>
+
                 <div id="videoOptionsContainer" class="bg-[#131b2e]/90 backdrop-blur border border-gray-800 rounded-2xl p-5 space-y-4 shadow-xl">
                     <div>
                         <label class="block text-xs font-semibold text-gray-300 mb-2 uppercase tracking-wider">Durasi Video</label>
@@ -361,6 +376,7 @@
         let currentMode = 'text-to-video';
         let currentUserCredits = 160;
         let currentLoggedInEmail = 'admin@noxusvision.com';
+        let favoritePresets = [];
 
         let usersList = [
             { email: 'admin@noxusvision.com', password: 'admin123', role: 'Admin', credits: 'Unlimited', status: 'Active' },
@@ -402,6 +418,7 @@
                 document.getElementById('navAdmin').classList.add('hidden');
             }
             renderAdminTable();
+            loadPresets();
             switchTabNav('studio');
         }
 
@@ -559,6 +576,96 @@
         function updateCharCount() {
             const text = document.getElementById('promptInput').value;
             document.getElementById('charCount').innerText = text.length + " karakter";
+        }
+
+        function getPresetStorageKey() {
+            return 'noxusVisionPresets_' + (currentLoggedInEmail || 'guest');
+        }
+
+        function loadPresets() {
+            try {
+                const saved = localStorage.getItem(getPresetStorageKey());
+                favoritePresets = saved ? JSON.parse(saved) : [];
+            } catch (e) {
+                favoritePresets = [];
+            }
+            renderPresets();
+        }
+
+        function savePresetsToStorage() {
+            try {
+                localStorage.setItem(getPresetStorageKey(), JSON.stringify(favoritePresets));
+            } catch (e) {}
+        }
+
+        function savePreset() {
+            const nameInput = document.getElementById('presetNameInput');
+            const promptText = document.getElementById('promptInput').value.trim();
+            let presetName = nameInput.value.trim();
+            if (!presetName) {
+                presetName = 'Preset ' + (favoritePresets.length + 1);
+            }
+            const preset = {
+                name: presetName,
+                prompt: promptText,
+                model: selectedModel,
+                duration: selectedDuration,
+                resolution: selectedResolution,
+                aspect: selectedAspect,
+                mode: currentMode
+            };
+            favoritePresets.push(preset);
+            savePresetsToStorage();
+            renderPresets();
+            nameInput.value = '';
+            alert('Preset "' + presetName + '" berhasil disimpan!');
+        }
+
+        function applyPreset(index) {
+            const preset = favoritePresets[index];
+            if (!preset) return;
+            document.getElementById('promptInput').value = preset.prompt || '';
+            updateCharCount();
+            if (preset.mode) setGeneratorMode(preset.mode);
+            if (preset.model) selectModel(preset.model);
+            if (preset.duration) setDuration(preset.duration);
+            if (preset.resolution) setResolution(preset.resolution);
+            if (preset.aspect) setAspect(preset.aspect);
+        }
+
+        function deletePreset(index) {
+            favoritePresets.splice(index, 1);
+            savePresetsToStorage();
+            renderPresets();
+        }
+
+        function renderPresets() {
+            const container = document.getElementById('presetList');
+            if (!container) return;
+            if (!favoritePresets.length) {
+                container.innerHTML = '<p class="text-xs text-gray-500 italic">Belum ada preset favorit.</p>';
+                return;
+            }
+            container.innerHTML = '';
+            favoritePresets.forEach(function(preset, index) {
+                const chip = document.createElement('div');
+                chip.className = 'flex items-center gap-1 bg-purple-600/20 border border-purple-500/40 rounded-xl pl-3 pr-1 py-1';
+                const applyBtn = document.createElement('button');
+                applyBtn.type = 'button';
+                applyBtn.className = 'text-xs font-medium text-purple-200 hover:text-white transition';
+                applyBtn.textContent = preset.name;
+                applyBtn.title = preset.model + ' • ' + preset.duration + ' • ' + preset.resolution + ' • ' + preset.aspect;
+                applyBtn.onclick = function() { applyPreset(index); };
+                const deleteBtn = document.createElement('button');
+                deleteBtn.type = 'button';
+                deleteBtn.className = 'w-5 h-5 bg-purple-600/40 hover:bg-red-600 text-white rounded-full text-[10px] flex items-center justify-center transition';
+                deleteBtn.textContent = '✕';
+                deleteBtn.title = 'Hapus preset';
+                deleteBtn.onclick = function() { deletePreset(index); };
+                chip.appendChild(applyBtn);
+                chip.appendChild(deleteBtn);
+                container.appendChild(chip);
+            });
         }
 
         function selectModel(modelName) {
@@ -922,6 +1029,7 @@
         function downloadResult() {
             alert("Mengunduh file hasil render...");
         }
+            loadPresets();
     </script>
 </body>
 </html>
