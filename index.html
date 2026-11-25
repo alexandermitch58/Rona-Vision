@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rona Vision - Cloud AI Studio</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Cegah scroll ganda: kunci scroll halaman utama saat layar depan/login terbuka */
+        body:has(#loginModal:not(.hidden)) { overflow: hidden; }
+    </style>
 </head>
 <body class="bg-[#0b0f17] text-gray-100 font-sans min-h-screen flex flex-col" style="background-image: linear-gradient(to bottom, rgba(11,15,23,0.6), rgba(11,15,23,0.8)), url('bg.png'); background-size: cover; background-position: center; background-attachment: fixed;">
 
