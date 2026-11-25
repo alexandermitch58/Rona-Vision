@@ -193,22 +193,106 @@
                 </div>
 
                 <div class="space-y-3">
-                    <h3 class="text-lg font-bold text-white">Dari Komunitas</h3>
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-lg font-bold text-white">Dari Komunitas</h3>
+                        <span class="text-[11px] text-gray-500">Contoh tampilan, galeri komunitas asli aktif di tahap backend</span>
+                    </div>
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                        <div class="bg-[#131b2e]/90 backdrop-blur border border-gray-800 rounded-2xl p-4 space-y-2">
-                            <p class="text-sm font-semibold text-white">Suasana Alam Tenang</p>
-                            <p class="text-[11px] text-gray-500">@ronacreator • ASMR • Alam</p>
-                            <button onclick="switchTabNav('template')" class="text-xs text-purple-400 hover:underline">Coba gaya ini</button>
+                        <div class="bg-[#131b2e]/90 backdrop-blur border border-gray-800 rounded-2xl overflow-hidden shadow-xl">
+                            <div class="relative h-28 overflow-hidden">
+                                <img src="thumbs/alam.jpg" alt="" class="absolute inset-0 w-full h-full object-cover">
+                                <span class="absolute inset-0 flex items-center justify-center text-white"><span class="bg-black/40 rounded-full p-2"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+                                <span class="absolute bottom-2 right-2 text-[10px] bg-black/60 text-gray-200 px-1.5 py-0.5 rounded">0:15 • 720p</span>
+                                <span class="absolute top-2 left-2 text-[10px] bg-purple-600/80 text-white px-1.5 py-0.5 rounded">Seedance 2.0</span>
+                            </div>
+                            <div class="p-4 space-y-1.5">
+                                <p class="text-sm font-semibold text-white">Suasana Alam Tenang</p>
+                                <p class="text-[11px] text-gray-500">@ronacreator • ASMR • Alam</p>
+                                <div class="flex items-center justify-between pt-1">
+                                    <span class="text-[11px] text-gray-400">♥ 1.240</span>
+                                    <button onclick="switchTabNav('template')" class="text-xs text-purple-400 hover:underline">Coba gaya ini</button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="bg-[#131b2e]/90 backdrop-blur border border-gray-800 rounded-2xl p-4 space-y-2">
-                            <p class="text-sm font-semibold text-white">Adegan Kota Malam</p>
-                            <p class="text-[11px] text-gray-500">@studioindonesia • Sinematik • Kota</p>
-                            <button onclick="switchTabNav('template')" class="text-xs text-purple-400 hover:underline">Coba gaya ini</button>
+                        <div class="bg-[#131b2e]/90 backdrop-blur border border-gray-800 rounded-2xl overflow-hidden shadow-xl">
+                            <div class="relative h-28 overflow-hidden">
+                                <img src="thumbs/kota.jpg" alt="" class="absolute inset-0 w-full h-full object-cover">
+                                <span class="absolute inset-0 flex items-center justify-center text-white"><span class="bg-black/40 rounded-full p-2"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+                                <span class="absolute bottom-2 right-2 text-[10px] bg-black/60 text-gray-200 px-1.5 py-0.5 rounded">0:10 • 1080p</span>
+                                <span class="absolute top-2 left-2 text-[10px] bg-purple-600/80 text-white px-1.5 py-0.5 rounded">Seedance 2.5</span>
+                            </div>
+                            <div class="p-4 space-y-1.5">
+                                <p class="text-sm font-semibold text-white">Adegan Kota Malam</p>
+                                <p class="text-[11px] text-gray-500">@studioindonesia • Sinematik • Kota</p>
+                                <div class="flex items-center justify-between pt-1">
+                                    <span class="text-[11px] text-gray-400">♥ 986</span>
+                                    <button onclick="switchTabNav('template')" class="text-xs text-purple-400 hover:underline">Coba gaya ini</button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="bg-[#131b2e]/90 backdrop-blur border border-gray-800 rounded-2xl p-4 space-y-2">
-                            <p class="text-sm font-semibold text-white">Produk & Fashion</p>
-                            <p class="text-[11px] text-gray-500">@kreatorlokal • Iklan • Produk</p>
-                            <button onclick="switchTabNav('template')" class="text-xs text-purple-400 hover:underline">Coba gaya ini</button>
+                        <div class="bg-[#131b2e]/90 backdrop-blur border border-gray-800 rounded-2xl overflow-hidden shadow-xl">
+                            <div class="relative h-28 overflow-hidden">
+                                <img src="thumbs/fashion.jpg" alt="" class="absolute inset-0 w-full h-full object-cover">
+                                <span class="absolute inset-0 flex items-center justify-center text-white"><span class="bg-black/40 rounded-full p-2"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+                                <span class="absolute bottom-2 right-2 text-[10px] bg-black/60 text-gray-200 px-1.5 py-0.5 rounded">0:08 • 1080p</span>
+                                <span class="absolute top-2 left-2 text-[10px] bg-purple-600/80 text-white px-1.5 py-0.5 rounded">Veo 3.1 Pro</span>
+                            </div>
+                            <div class="p-4 space-y-1.5">
+                                <p class="text-sm font-semibold text-white">Produk & Fashion</p>
+                                <p class="text-[11px] text-gray-500">@kreatorlokal • Iklan • Produk</p>
+                                <div class="flex items-center justify-between pt-1">
+                                    <span class="text-[11px] text-gray-400">♥ 754</span>
+                                    <button onclick="switchTabNav('template')" class="text-xs text-purple-400 hover:underline">Coba gaya ini</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-[#131b2e]/90 backdrop-blur border border-gray-800 rounded-2xl overflow-hidden shadow-xl">
+                            <div class="relative h-28 overflow-hidden">
+                                <img src="thumbs/hujan.jpg" alt="" class="absolute inset-0 w-full h-full object-cover">
+                                <span class="absolute inset-0 flex items-center justify-center text-white"><span class="bg-black/40 rounded-full p-2"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+                                <span class="absolute bottom-2 right-2 text-[10px] bg-black/60 text-gray-200 px-1.5 py-0.5 rounded">0:30 • 720p</span>
+                                <span class="absolute top-2 left-2 text-[10px] bg-purple-600/80 text-white px-1.5 py-0.5 rounded">Seedance 2.0</span>
+                            </div>
+                            <div class="p-4 space-y-1.5">
+                                <p class="text-sm font-semibold text-white">Hujan di Atap Rumah</p>
+                                <p class="text-[11px] text-gray-500">@asmrindonesia • ASMR • Hujan</p>
+                                <div class="flex items-center justify-between pt-1">
+                                    <span class="text-[11px] text-gray-400">♥ 2.105</span>
+                                    <button onclick="switchTabNav('template')" class="text-xs text-purple-400 hover:underline">Coba gaya ini</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-[#131b2e]/90 backdrop-blur border border-gray-800 rounded-2xl overflow-hidden shadow-xl">
+                            <div class="relative h-28 overflow-hidden">
+                                <img src="thumbs/gunung.jpg" alt="" class="absolute inset-0 w-full h-full object-cover">
+                                <span class="absolute inset-0 flex items-center justify-center text-white"><span class="bg-black/40 rounded-full p-2"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+                                <span class="absolute bottom-2 right-2 text-[10px] bg-black/60 text-gray-200 px-1.5 py-0.5 rounded">0:15 • 1080p</span>
+                                <span class="absolute top-2 left-2 text-[10px] bg-purple-600/80 text-white px-1.5 py-0.5 rounded">Seedance 2.5</span>
+                            </div>
+                            <div class="p-4 space-y-1.5">
+                                <p class="text-sm font-semibold text-white">Perjalanan Pagi di Pegunungan</p>
+                                <p class="text-[11px] text-gray-500">@travelrona • Travel • Alam</p>
+                                <div class="flex items-center justify-between pt-1">
+                                    <span class="text-[11px] text-gray-400">♥ 642</span>
+                                    <button onclick="switchTabNav('template')" class="text-xs text-purple-400 hover:underline">Coba gaya ini</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-[#131b2e]/90 backdrop-blur border border-gray-800 rounded-2xl overflow-hidden shadow-xl">
+                            <div class="relative h-28 overflow-hidden">
+                                <img src="thumbs/podcast.jpg" alt="" class="absolute inset-0 w-full h-full object-cover">
+                                <span class="absolute inset-0 flex items-center justify-center text-white"><span class="bg-black/40 rounded-full p-2"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+                                <span class="absolute bottom-2 right-2 text-[10px] bg-black/60 text-gray-200 px-1.5 py-0.5 rounded">0:20 • 720p</span>
+                                <span class="absolute top-2 left-2 text-[10px] bg-purple-600/80 text-white px-1.5 py-0.5 rounded">Seedance 2.5</span>
+                            </div>
+                            <div class="p-4 space-y-1.5">
+                                <p class="text-sm font-semibold text-white">Klip Bicara Podcast</p>
+                                <p class="text-[11px] text-gray-500">@podcastlokal • Bicara • Podcast</p>
+                                <div class="flex items-center justify-between pt-1">
+                                    <span class="text-[11px] text-gray-400">♥ 418</span>
+                                    <button onclick="switchTabNav('template')" class="text-xs text-purple-400 hover:underline">Coba gaya ini</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
