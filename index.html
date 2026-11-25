@@ -9,10 +9,34 @@
 <body class="bg-[#0b0f17] text-gray-100 font-sans min-h-screen flex flex-col" style="background-image: linear-gradient(to bottom, rgba(11,15,23,0.6), rgba(11,15,23,0.8)), url('bg.png'); background-size: cover; background-position: center; background-attachment: fixed;">
 
     <!-- MODAL LOGIN -->
-    <div id="loginModal" class="fixed inset-0 z-50 flex items-center justify-center px-4 py-6 overflow-y-auto bg-black/60 backdrop-blur-sm" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('bg.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-        <div class="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center max-w-5xl w-full mx-auto p-4">
-            <div class="hidden lg:flex flex-col items-center justify-center overflow-hidden rounded-3xl border border-purple-500/30 shadow-2xl bg-[#131b2e]/40 backdrop-blur-md aspect-video">
-                <img src="bg.png" alt="Rona Vision Artwork" class="w-full h-full object-cover">
+    <div id="loginModal" class="fixed inset-0 z-50 overflow-y-auto bg-black/60 backdrop-blur-sm" style="background-image: linear-gradient(to bottom, rgba(11,15,23,0.82), rgba(11,15,23,0.94)), url('bg.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+        <div class="relative z-10 max-w-5xl w-full mx-auto px-4"><div class="min-h-screen flex flex-col justify-center py-10"><div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center w-full">
+            <div class="hidden lg:flex flex-col justify-center space-y-5 rounded-3xl border border-purple-500/30 shadow-2xl bg-[#131b2e]/50 backdrop-blur-md p-8">
+                <div class="space-y-3">
+                    <span class="inline-block text-[11px] font-semibold tracking-widest text-purple-300 border border-purple-500/40 bg-purple-600/10 px-3 py-1 rounded-full">RONA VISION • CLOUD AI STUDIO</span>
+                    <h1 class="text-4xl font-bold text-white leading-tight">Satu visi,<br>banyak adegan.</h1>
+                    <p class="text-sm text-gray-300 leading-relaxed">Studio video AI untuk kreator Indonesia. Tulis prompt, pilih model, dan hasilkan video siap upload untuk Reels dan YouTube.</p>
+                </div>
+                <ul class="space-y-2 text-sm text-gray-200">
+                    <li class="flex items-center gap-2"><span class="text-purple-400"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span> Seedance 2.5, Seedance 2.0 &amp; Veo 3.1 Pro</li>
+                    <li class="flex items-center gap-2"><span class="text-purple-400"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span> Video hingga 1080p, format 16:9, 9:16 &amp; 1:1</li>
+                    <li class="flex items-center gap-2"><span class="text-purple-400"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span> Template siap pakai &amp; preset favorit</li>
+                    <li class="flex items-center gap-2"><span class="text-purple-400"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span> Mulai dari 20 kredit, tanpa langganan</li>
+                </ul>
+                <div class="grid grid-cols-3 gap-3">
+                    <img src="thumbs/alam.jpg" alt="Contoh karya alam" class="w-full h-20 object-cover rounded-xl border border-purple-500/30">
+                    <img src="thumbs/kota.jpg" alt="Contoh karya kota malam" class="w-full h-20 object-cover rounded-xl border border-purple-500/30">
+                    <img src="thumbs/fashion.jpg" alt="Contoh karya produk fashion" class="w-full h-20 object-cover rounded-xl border border-purple-500/30">
+                </div>
+                <div class="flex flex-wrap gap-1.5">
+                    <span class="text-[11px] text-gray-300 border border-gray-700 bg-[#0b0f17]/60 px-2.5 py-1 rounded-full">Arah</span>
+                    <span class="text-[11px] text-gray-300 border border-gray-700 bg-[#0b0f17]/60 px-2.5 py-1 rounded-full">Pijar</span>
+                    <span class="text-[11px] text-gray-300 border border-gray-700 bg-[#0b0f17]/60 px-2.5 py-1 rounded-full">Lensa</span>
+                    <span class="text-[11px] text-gray-300 border border-gray-700 bg-[#0b0f17]/60 px-2.5 py-1 rounded-full">Warna</span>
+                    <span class="text-[11px] text-gray-300 border border-gray-700 bg-[#0b0f17]/60 px-2.5 py-1 rounded-full">Layar</span>
+                    <span class="text-[11px] text-gray-300 border border-gray-700 bg-[#0b0f17]/60 px-2.5 py-1 rounded-full">Kas</span>
+                    <span class="text-[11px] text-purple-300 px-1 py-1">— tim Agen Rona siap membantu</span>
+                </div>
             </div>
             <div class="bg-[#131b2e]/50 border border-purple-500/30 p-8 rounded-3xl w-full max-w-md mx-auto shadow-2xl backdrop-blur-md">
                 <div id="formLoginView">
@@ -84,7 +108,91 @@
                     </div>
                 </div>
             </div>
+
+            </div>
+            <p class="text-center text-[11px] text-gray-400 mt-8">Gulir ke bawah untuk melihat model, agen, contoh karya, dan harga ↓</p>
         </div>
+
+        <div class="space-y-12 pb-10">
+            <section class="space-y-4">
+                <h2 class="text-2xl font-bold text-white">Model Video AI</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div class="bg-[#131b2e]/60 backdrop-blur border border-gray-800 rounded-2xl p-5 space-y-2">
+                        <h3 class="font-bold text-white text-sm">Seedance 2.5</h3>
+                        <p class="text-xs text-gray-400">1080p dengan audio &amp; lip-sync. Cocok untuk drama dan video bicara.</p>
+                        <p class="text-xs text-purple-300">Contoh 10 detik 720p: 24 kredit</p>
+                    </div>
+                    <div class="bg-[#131b2e]/60 backdrop-blur border border-gray-800 rounded-2xl p-5 space-y-2">
+                        <h3 class="font-bold text-white text-sm">Seedance 2.0</h3>
+                        <p class="text-xs text-gray-400">Kualitas studio standar, lebih hemat. Cocok untuk ASMR dan suasana.</p>
+                        <p class="text-xs text-purple-300">Contoh 10 detik 720p: 16 kredit</p>
+                    </div>
+                    <div class="bg-[#131b2e]/60 backdrop-blur border border-gray-800 rounded-2xl p-5 space-y-2">
+                        <h3 class="font-bold text-white text-sm">Veo 3.1 Pro</h3>
+                        <p class="text-xs text-gray-400">Sinematik ultra realistis. Cocok untuk adegan film dan iklan.</p>
+                        <p class="text-xs text-purple-300">Contoh 10 detik 720p: 20 kredit</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="space-y-4">
+                <h2 class="text-2xl font-bold text-white">Tim Agen Rona</h2>
+                <p class="text-xs text-gray-400">Enam agen dengan tugas masing-masing, dari ide sampai laporan. Kamu cukup memberi perintah sekali.</p>
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                    <div class="bg-[#131b2e]/60 backdrop-blur border border-gray-800 rounded-2xl p-4 space-y-1"><p class="text-sm font-semibold text-white">01 • Arah</p><p class="text-[11px] text-gray-400">Koordinator, membagi tugas ke agen lain.</p></div>
+                    <div class="bg-[#131b2e]/60 backdrop-blur border border-gray-800 rounded-2xl p-4 space-y-1"><p class="text-sm font-semibold text-white">02 • Pijar</p><p class="text-[11px] text-gray-400">Ide &amp; tren, riset kompetitor.</p></div>
+                    <div class="bg-[#131b2e]/60 backdrop-blur border border-gray-800 rounded-2xl p-4 space-y-1"><p class="text-sm font-semibold text-white">03 • Lensa</p><p class="text-[11px] text-gray-400">Prompt &amp; generate, pilih model terbaik.</p></div>
+                    <div class="bg-[#131b2e]/60 backdrop-blur border border-gray-800 rounded-2xl p-4 space-y-1"><p class="text-sm font-semibold text-white">04 • Warna</p><p class="text-[11px] text-gray-400">Editor hasil, judul &amp; thumbnail.</p></div>
+                    <div class="bg-[#131b2e]/60 backdrop-blur border border-gray-800 rounded-2xl p-4 space-y-1"><p class="text-sm font-semibold text-white">05 • Layar</p><p class="text-[11px] text-gray-400">Penerbit ke Facebook &amp; YouTube.</p></div>
+                    <div class="bg-[#131b2e]/60 backdrop-blur border border-gray-800 rounded-2xl p-4 space-y-1"><p class="text-sm font-semibold text-white">06 • Kas</p><p class="text-[11px] text-gray-400">Bendahara, kredit &amp; laporan.</p></div>
+                </div>
+            </section>
+
+            <section class="space-y-4">
+                <h2 class="text-2xl font-bold text-white">Contoh Karya Komunitas</h2>
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                    <img src="thumbs/alam.jpg" alt="Suasana Alam Tenang" class="w-full h-36 object-cover rounded-2xl border border-purple-500/30">
+                    <img src="thumbs/kota.jpg" alt="Adegan Kota Malam" class="w-full h-36 object-cover rounded-2xl border border-purple-500/30">
+                    <img src="thumbs/fashion.jpg" alt="Produk &amp; Fashion" class="w-full h-36 object-cover rounded-2xl border border-purple-500/30">
+                    <img src="thumbs/hujan.jpg" alt="Hujan di Atap Rumah" class="w-full h-36 object-cover rounded-2xl border border-purple-500/30">
+                    <img src="thumbs/gunung.jpg" alt="Perjalanan Pagi di Pegunungan" class="w-full h-36 object-cover rounded-2xl border border-purple-500/30">
+                    <img src="thumbs/podcast.jpg" alt="Klip Bicara Podcast" class="w-full h-36 object-cover rounded-2xl border border-purple-500/30">
+                </div>
+            </section>
+
+            <section class="space-y-4">
+                <h2 class="text-2xl font-bold text-white">Harga &amp; Paket Kredit</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div class="bg-[#131b2e]/60 backdrop-blur border border-gray-800 rounded-2xl p-5 space-y-2">
+                        <h3 class="font-bold text-white text-sm">Starter</h3>
+                        <p class="text-2xl font-bold text-purple-400">20 Kredit</p>
+                        <p class="text-sm text-gray-200 font-semibold">Rp 50.000</p>
+                        <p class="text-xs text-gray-400">Untuk coba-coba dan video pendek.</p>
+                    </div>
+                    <div class="bg-[#131b2e]/60 backdrop-blur border-2 border-purple-500 rounded-2xl p-5 space-y-2">
+                        <h3 class="font-bold text-white text-sm">Creator</h3>
+                        <p class="text-2xl font-bold text-purple-400">50 Kredit</p>
+                        <p class="text-sm text-gray-200 font-semibold">Rp 120.000</p>
+                        <p class="text-xs text-gray-400">Untuk kreator yang rutin upload.</p>
+                    </div>
+                    <div class="bg-[#131b2e]/60 backdrop-blur border border-gray-800 rounded-2xl p-5 space-y-2">
+                        <h3 class="font-bold text-white text-sm">Studio</h3>
+                        <p class="text-2xl font-bold text-purple-400">150 Kredit</p>
+                        <p class="text-sm text-gray-200 font-semibold">Rp 350.000</p>
+                        <p class="text-xs text-gray-400">Untuk produksi banyak dan jasa video.</p>
+                    </div>
+                </div>
+                <p class="text-[11px] text-gray-500">Tanpa langganan. Pembayaran QRIS dan e-wallet dihubungkan di tahap backend.</p>
+            </section>
+
+            <footer class="text-center text-[11px] text-gray-400 pt-4 border-t border-gray-800 space-x-3">
+                <span>© 2026 Rona Vision</span>
+                <button type="button" onclick="openInfoModal('terms')" class="hover:text-purple-400 transition">Syarat Penggunaan</button>
+                <button type="button" onclick="openInfoModal('privacy')" class="hover:text-purple-400 transition">Kebijakan Privasi</button>
+                <button type="button" onclick="openInfoModal('contact')" class="hover:text-purple-400 transition">Kontak</button>
+            </footer>
+        </div>
+    </div>
     </div>
 
     <!-- POP-UP MODAL AKUN -->
