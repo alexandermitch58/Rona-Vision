@@ -6,7 +6,7 @@ import { falStatus, falResult } from "../../_lib/fal.js";
 import { getJob, saveJob, refundCredits, archiveVideoToR2 } from "../../_lib/store.js";
 
 const MOCK_VIDEO_URL =
-  "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
+  "https://www.w3schools.com/html/mov_bbb.mp4";
 
 export async function onRequestGet(context) {
   const { env, params } = context;
